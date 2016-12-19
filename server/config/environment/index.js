@@ -2,6 +2,13 @@
 
 const path = require('path');
 
-module.exports = {
-    rootDir: path.resolve(`${__dirname}/../../..`)
+const all = {
+    rootDir: path.resolve(`${__dirname}/../../..`),
+    port: process.env.PORT || 9000
 };
+
+module.exports = Object.assign(
+    {},
+    all,
+    require(`./${process.env.NODE_ENV}`)
+);
