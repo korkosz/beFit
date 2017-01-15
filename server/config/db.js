@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function (mongoose) {
-    mongoose.Promise = global.Promise;
+const mongoose = require('mongoose');
+const url = require('./environment').mongoURL;
 
-    //connect to db
-    const url = require('./environment');
-    mongoose.connect(url);
-};
+mongoose.Promise = global.Promise;
+
+//connect to db
+mongoose.connect(url);
