@@ -8,6 +8,9 @@ const config = require('./config/environment');
 //Configure App
 require('./config/express')(app);
 
+//Routes
+require('./routes')(app);
+
 //Start App
 app.listen(config.port, ()=> {
     console.log(`Server Started on port: ${config.port}`);
