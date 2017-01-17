@@ -4,15 +4,25 @@
   "dependencies": {
     "angular": "^1.6.1",
     "angular-ui-router": "1.0.0-beta.3",
-    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "mongoose": "^4.7.3",
     "path": "^0.12.7"
   },
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build:js": "browserify client/index.js -o client/dist/bundle.js -d",
+    "watch:js": "onchange \"client/**/*.js\" -e \"client/dist/*.js\" -v -i -- npm run build:js",
+    "build:css": "node-sass --output-style expanded --sourceMap true --sourceMapContents true -o client/dist client/index.scss",
+    "watch:css": "onchange \"client/**/*.scss\" -e \"client/dist/*.scss\" -v -i -- npm run build:css",
+    "serve": "browser-sync start --files \"client/dist/*.js, client/dist/*.css\" --proxy \"http://localhost:9000\" --startPath \"#!/home\"",
+    "observe": "run-p watch:* serve"
   },
   "devDependencies": {
-    "morgan": "^1.7.0"
+    "browser-sync": "^2.18.6",
+    "browserify": "^13.3.0",
+    "morgan": "^1.7.0",
+    "node-sass": "^4.3.0",
+    "npm-run-all": "^4.0.1",
+    "onchange": "^3.2.1"
   }
 }
