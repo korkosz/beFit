@@ -1,6 +1,6 @@
 module.exports = function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
-        name: 'home',
+        name: 'a.home',
         url: '/home',
         views: {
             '': {
@@ -13,7 +13,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'meals',
+        name: 'a.meals',
         url: '/meals',
         views: {
             '': {
@@ -26,7 +26,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'ingredients',
+        name: 'a.ingredients',
         templateUrl: '/views/ingredients/ingredients.html',
         url: '/ingredients',
         views: {
@@ -40,7 +40,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'history',
+        name: 'a.history',
         templateUrl: '/views/history/history.html',
         url: '/history',
         views: {
@@ -54,7 +54,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'shopping',
+        name: 'a.shopping',
         templateUrl: '/views/shopping/shopping.html',
         url: '/shopping',
         views: {
@@ -68,7 +68,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'combinations',
+        name: 'a.combinations',
         templateUrl: '/views/combinations/combinations.html',
         url: '/combinations',
         views: {
@@ -81,5 +81,5 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
         }
     });
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/home');
 };
