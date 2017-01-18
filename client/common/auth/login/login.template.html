@@ -1,0 +1,12 @@
+<form name="logInForm" novalidate ng-submit="logInForm.$valid && $ctrl.logIn()">
+    <input type="text" required placeholder="Email" ng-model="$ctrl.email">
+    <input type="password" required placeholder="Password" ng-model="$ctrl.password">
+
+    <button type="submit">LogIn</button>
+</form>
+
+<!-- to jest na czas developmentu -->
+<button ng-click="$ctrl.korkosz();"
+        style="background-color: red; color: white;">
+    LogIn as korkosz !!!
+</button>
