@@ -5,7 +5,7 @@ const app = angular.module('beFit', [
     require('./common').name
 ]);
 
-//pages routing
+//routing
 app.config(require('./views/states'));
 
 module.exports = app;
