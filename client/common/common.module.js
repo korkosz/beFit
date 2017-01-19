@@ -1,6 +1,6 @@
 const commonModule = angular.module('common', [
     require('./auth').name,
-    require('./horizontal_calendar/horizontalCalendar').name
+    require('./horizontal calendar').name
 ]);
 
 commonModule
