@@ -2,11 +2,9 @@ const angular = require('angular');
 
 const app = angular.module('beFit', [
     require('angular-ui-router').default,
-    require('./common').name
+    require('./common').name,
+    require('./views').name
 ]);
-
-//states
-app.config(require('./views/states'));
 
 //authentication config
 app.run(require('./common/auth/auth.states.config'));

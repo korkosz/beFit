@@ -4,8 +4,8 @@ module.exports = function ($stateProvider) {
         abstract: true,
 
         //TODO do zmiany
-        template: `<div ui-view="left-menu"></div>
-                   <div ui-view></div>`,
+        template: `<div ui-view="left-menu" class="col-md-2"></div>
+                   <div ui-view class="col-md-10"></div>`,
 
         resolve: {
             authUser($q, auth) {

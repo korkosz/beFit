@@ -4,7 +4,8 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
         url: '/home',
         views: {
             '': {
-                templateUrl: '/views/home/home.html'
+                templateUrl: '/views/home/home.html',
+                controller: 'HomeCtrl as homeCtrl'
             },
             'left-menu': {
                 template: '<menu></menu>'
