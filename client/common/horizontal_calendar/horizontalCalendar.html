@@ -5,22 +5,20 @@
 
 <ul class="m-timetable-home__nav">
 
-    <li class="l-btn__arrow
-                l-btn__arrow--prev">
+    <li class="l-btn__arrow l-btn__arrow--prev">
         <button ng-click="$ctrl.previousDay()"><</button>
     </li>
 
+    <!--Previous Days-->
     <li ng-repeat="day in $ctrl.beforeDays"
-        ng-class="{'m-timetable-home__day--weekend':
-                    day.weekend,
-                    'm-timetable-home__day--current':
-                    $ctrl.isToday(day)}"
         ng-init="reversedIdx = $ctrl.beforeDays.length - $index"
         ng-click="$ctrl.removeDays(reversedIdx)"
-        style="cursor: pointer"
+        ng-class="{'day-active': day.weekend}"
         class="m-timetable-home__day">
         {{day.day}}
     </li>
+
+    <!--Selected Day-->
     <li class="m-timetable-home__day
                 m-timetable-home__day--active">
         <h3 class="day-name">
@@ -28,17 +26,16 @@
         </h3>
         {{$ctrl.selectedDay.format('DD')}}
     </li>
+
+    <!--Next Days-->
     <li ng-repeat="day in $ctrl.afterDays"
-        ng-class="{'m-timetable-home__day--weekend':
-                    day.weekend}"
         ng-click="$ctrl.addDays($index + 1)"
-        style="cursor: pointer"
+        ng-class="{'day-active': day.weekend}"
         class="m-timetable-home__day">
         {{day.day}}
     </li>
 
-    <li class="l-btn__arrow
-                l-btn__arrow--next">
+    <li class="l-btn__arrow l-btn__arrow--next">
         <button ng-click="$ctrl.nextDay()">></button>
     </li>
 </ul>
