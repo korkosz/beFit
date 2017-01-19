@@ -68,6 +68,7 @@ module.exports = angular.module('ct.horizontalCalendar', [])
                     let selectedDayCopy = moment(vm.selectedDay).subtract(i, 'd');
                     vm.beforeDays.push({
                         day: selectedDayCopy.format('DD'),
+                        weekDay: selectedDayCopy.format('ddd'),
                         month: selectedDayCopy.month(),
                         year: selectedDayCopy.year(),
                         weekend: selectedDayCopy.day() === 0 ||
@@ -82,6 +83,7 @@ module.exports = angular.module('ct.horizontalCalendar', [])
                     let selectedDayCopy = moment(vm.selectedDay).add(i, 'd');
                     vm.afterDays.push({
                         day: selectedDayCopy.format('DD'),
+                        weekDay: selectedDayCopy.format('ddd'),
                         month: selectedDayCopy.month(),
                         year: selectedDayCopy.year(),
                         weekend: selectedDayCopy.day() === 0 ||
