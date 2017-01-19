@@ -1,0 +1,45 @@
+<button ng-click="$ctrl.refresh()"
+        class="l-refresh__button"> refresh
+    <img src="static/assets/images/icon-refresh.svg" />
+</button>
+
+<ul class="m-timetable-home__nav">
+
+    <li class="l-btn__arrow l-btn__arrow--prev">
+        <button ng-click="$ctrl.previousDay()"><</button>
+    </li>
+
+    <!--Previous Days-->
+    <li ng-repeat="day in $ctrl.beforeDays"
+        ng-init="reversedIdx = $ctrl.beforeDays.length - $index"
+        ng-click="$ctrl.removeDays(reversedIdx)"
+        class="m-timetable-home__day">
+        <h3 class="day-name">
+            {{day.day}}
+        </h3>
+        {{day.weekDay}}
+    </li>
+
+    <!--Selected Day-->
+    <li class="m-timetable-home__day
+                m-timetable-home__day--active">
+        <h3 class="day-name">
+            {{$ctrl.selectedDay.format('DD')}}
+        </h3>
+        {{$ctrl.selectedDay.format('ddd')}}
+    </li>
+
+    <!--Next Days-->
+    <li ng-repeat="day in $ctrl.afterDays"
+        ng-click="$ctrl.addDays($index + 1)"
+        class="m-timetable-home__day">
+        <h3 class="day-name">
+            {{day.day}}
+        </h3>
+        {{day.weekDay}}
+    </li>
+
+    <li class="l-btn__arrow l-btn__arrow--next">
+        <button ng-click="$ctrl.nextDay()">></button>
+    </li>
+</ul>

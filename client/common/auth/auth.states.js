@@ -2,11 +2,7 @@ module.exports = function ($stateProvider) {
     $stateProvider.state({
         name: 'a', //authorized
         abstract: true,
-
-        //TODO do zmiany
-        template: `<div ui-view="left-menu"></div>
-                   <div ui-view></div>`,
-
+        templateUrl: '/views/_layouts/default.layout.html',
         resolve: {
             authUser($q, auth) {
                 if (auth.isLoggedIn()) {
