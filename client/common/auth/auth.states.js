@@ -4,9 +4,9 @@ module.exports = function ($stateProvider) {
         abstract: true,
         templateUrl: '/views/_layouts/default.layout.html',
         resolve: {
-            authUser($q, auth) {
+            authUser(auth) {
                 if (auth.isLoggedIn()) {
-                    return $q.when(auth.getUser());
+                    return auth.getUser();
                 } else {
                     return auth.setUser();
                 }

@@ -4,6 +4,7 @@ const commonModule = angular.module('common', [
 ]);
 
 commonModule
+    .directive('ctList', require('./list/ct_list.directive.js'))
     .component('tripleContainer', require('./triple containter/triple_container.components'))
     .component('menu', require('./menu/menu'));
 

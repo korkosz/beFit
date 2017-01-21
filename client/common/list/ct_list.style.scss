@@ -1,0 +1,15 @@
+ct-list-header, ct-list-row {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+ct-list-header {
+  background-color: greenyellow;
+}
+ct-list-body {
+  display: block;
+  background-color: yellow;
+}
+ct-list-cell {
+  flex: 1;
+}

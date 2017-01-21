@@ -18,7 +18,8 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
         url: '/meals',
         views: {
             '': {
-                templateUrl: '/views/meals/meals.html'
+                templateUrl: '/views/meals/meals.html',
+                controller: 'MealsCtrl as mealsCtrl'
             },
             'left-menu': {
                 template: '<menu></menu>'
