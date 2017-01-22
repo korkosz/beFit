@@ -4,7 +4,8 @@ module.exports = function () {
     return {
         transclude: {
             'ctListHeader': 'ctListHeader',
-            'ctListBody': 'ctListBody'
+            'ctListBody': 'ctListBody',
+            'ctListActions': 'ctListActions'
         },
         templateUrl: '/common/list/ct_list.template.html',
         link(scope, el, attrs){
