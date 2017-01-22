@@ -1,1 +1,21 @@
-to sa te 3 stepy w modalu po kliknieciu + posilek w zakladce posilki
+<!--html dla tabow jest w folderze tabs obczaj ze trzeci tab to new meal inline komponent-->
+<!--scssy sa juz importowane w new_meal_modal.style.scss-->
+
+<section id="firstTab"
+         ng-hide="$ctrl.activeTab !== 'FIRST'"
+         ng-include="'/components/new meal modal/tabs/first_tab.html'"></section>
+
+<section id="secondTab"
+         ng-hide="$ctrl.activeTab !== 'SECOND'"
+         ng-include="'/components/new meal modal/tabs/second_tab.html'"></section>
+
+<section id="thirdTab"
+         ng-hide="$ctrl.activeTab !== 'THIRD'">
+    <!--obczaj ze tu korzystamy z tego samego komponentu co na home jak dodajesz posilek inline poprzez ten button + -->
+    <new-meal-inline></new-meal-inline>
+
+    <div>
+        <button ng-click="$ctrl.prevTab()">Wroc</button>
+        <button ng-click="$ctrl.save()">Zapisz</button>
+    </div>
+</section>
