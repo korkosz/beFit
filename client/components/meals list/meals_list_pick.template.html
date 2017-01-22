@@ -1,0 +1,28 @@
+<header>Moje posilki 53</header>
+
+<!--Filters-->
+<section ng-if="!$ctrl.filtersOff"
+         ng-include="'/components/meals list/filters/filters.template.html'">
+</section>
+
+<!--Table-->
+<ct-list>
+    <ct-list-header>
+        <ct-list-cell>Posilek</ct-list-cell>
+        <ct-list-cell>Rodzaj</ct-list-cell>
+        <ct-list-cell>Czas</ct-list-cell>
+        <ct-list-cell>Kalorycznosc</ct-list-cell>
+        <ct-list-cell></ct-list-cell>
+    </ct-list-header>
+    <ct-list-body>
+        <ct-list-row ng-repeat="meal in $ctrl.meals">
+            <ct-list-cell>{{meal.name}}</ct-list-cell>
+            <ct-list-cell>{{meal.type}}</ct-list-cell>
+            <ct-list-cell>{{meal.time}}</ct-list-cell>
+            <ct-list-cell>{{meal.calories}}</ct-list-cell>
+            <ct-list-cell>
+                <button>Dodaj</button>
+            </ct-list-cell>
+        </ct-list-row>
+    </ct-list-body>
+</ct-list>
