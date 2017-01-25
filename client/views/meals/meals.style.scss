@@ -1,0 +1,24 @@
+// Globalne
+.select__container{
+    position: relative;
+    display: inline-block;
+}
+
+.select__box{
+    position: relative;
+    padding: 0.8em 1em;
+    padding-right: 3em;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+
+.select__arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
