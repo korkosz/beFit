@@ -29,7 +29,7 @@ module.exports = function (app) {
     app.use(passport.session());
 
     if (process.env.NODE_ENV !== 'production') {
-        app.use(logger('dev'));
+        //app.use(logger('dev'));
 
         //seed
         require('./seed');
