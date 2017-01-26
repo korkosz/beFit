@@ -31,17 +31,45 @@
     <input type="search" placeholder="Szukaj" style="display: block;">
 </section>
 
-<div class="meals-filters">
-    <div class="select__container">
-        <div class="select__box"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Rodzaj posilku
-            <span class="select__arrow">⇕</span>
+<div class="meals__filters">
+    <div class="l-flex-row l-flex-row__small-gutter">
+        <div class="select__container">
+            <div class="select__field"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Rodzaj posilku
+                <span class="select__arrow">⇕</span>
+            </div>
+            <ul class="select__menu dropdown-menu">
+                <li class="select__menu-item"><a href="#">Sniadanie</a></li>
+                <li class="select__menu-item"><a href="#">Obiad</a></li>
+                <li class="select__menu-item"><a href="#">Kolacja</a></li>
+            </ul>
         </div>
-        <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li><a href="#">Separated link</a></li>
-        </ul>
+
+        <!--Przypadek gdy select jest zaznaczony -->
+        <div class="select__container">
+            <div class="select__field checked"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sniadanie
+                <!-- Po nacisnieciu x wraca do stanu poczatkowego -->
+                <span class="select__clear">x</span>
+            </div>
+            <ul class="select__menu dropdown-menu">
+                <li class="select__menu-item checked"><a href="#">Sniadanie</a></li>
+                <li class="select__menu-item"><a href="#">Obiad</a></li>
+                <li class="select__menu-item"><a href="#">Kolacja</a></li>
+            </ul>
+        </div>
+
+        <div class="input__container">
+            <input type="number" name="" value="" class="input__field" placeholder="Kaloryczność od">
+        </div>
+
+        <div class="input__container">
+            <input type="number" name="" value="" class="input__field" placeholder="Kaloryczność do">
+        </div>
+
+        <div class="input__container meals__input-search">
+            <input type="search" name="" value="" class="input__field" placeholder="Szukaj">
+        </div>
     </div>
+
 </div>
