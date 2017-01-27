@@ -1,0 +1,13 @@
+@import "products list item/products_list_item.style";
+@import "filters/filters.style";
+
+products-list {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 1rem;
+
+  .list {
+    padding: 20px 10px 10px 10px;
+    clear: both;
+  }
+}

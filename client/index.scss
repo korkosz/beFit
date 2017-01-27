@@ -1,6 +1,12 @@
-@import "views/test";
-@import "common/modal/modals";
-@import "common/horizontal calendar/horizontal_calendar";
-@import "common/list/ct_list.style";
+$default-font-size: 1.4rem;
 
+@import "common/index";
 @import "components/index";
+
+body {
+  font-size: 62.5% !important;
+}
+
+header {
+  font-size: 2.2rem;
+}

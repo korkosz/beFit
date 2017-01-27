@@ -28,12 +28,12 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'a.ingredients',
-        templateUrl: '/views/ingredients/ingredients.html',
+        name: 'a.products',
+        templateUrl: '/views/products/products.html',
         url: '/ingredients',
         views: {
             '': {
-                templateUrl: '/views/ingredients/ingredients.html'
+                templateUrl: '/views/products/products.html'
             },
             'left-menu': {
                 template: '<menu></menu>'
