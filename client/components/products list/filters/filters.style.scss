@@ -1,0 +1,18 @@
+products-list {
+  header {
+    .products-list-filters {
+      font-size: 1.4rem;
+
+      .attributes, .categories {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .categories {
+        input, select, button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
