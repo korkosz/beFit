@@ -2,6 +2,7 @@
     <div ng-class="{'checked': $ctrl.selectedOption}"
          class="select__field" type="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
+
         {{$ctrl.selectedOption || 'Rodzaj Posilku'}}
 
         <span ng-if="!$ctrl.selectedOption"
