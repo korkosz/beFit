@@ -33,38 +33,16 @@
 
 <div class="meals__filters">
     <div class="l-flex-row small-gutter">
-        <div class="select__container">
-            <div class="select__field"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Rodzaj posilku
-                <span class="select__arrow">⇕</span>
-            </div>
-            <ul class="select__menu dropdown-menu">
-                <li class="select__menu-item"><a href="#">Sniadanie</a></li>
-                <li class="select__menu-item"><a href="#">Obiad</a></li>
-                <li class="select__menu-item"><a href="#">Kolacja</a></li>
-            </ul>
-        </div>
+        <ct-select options="$ctrl.mealTypes"></ct-select>
 
-        <!--Przypadek gdy select jest zaznaczony -->
-        <div class="select__container">
-            <div class="select__field checked"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sniadanie
-                <!-- Po nacisnieciu x wraca do stanu poczatkowego -->
-                <span class="select__clear">x</span>
-            </div>
-            <ul class="select__menu dropdown-menu">
-                <li class="select__menu-item checked"><a href="#">Sniadanie</a></li>
-                <li class="select__menu-item"><a href="#">Obiad</a></li>
-                <li class="select__menu-item"><a href="#">Kolacja</a></li>
-            </ul>
+        <div class="input__container">
+            <input type="number" name="" value="" class="input__field"
+                   placeholder="Kaloryczność od">
         </div>
 
         <div class="input__container">
-            <input type="number" name="" value="" class="input__field" placeholder="Kaloryczność od">
-        </div>
-
-        <div class="input__container">
-            <input type="number" name="" value="" class="input__field" placeholder="Kaloryczność do">
+            <input type="number" name="" value="" class="input__field"
+                   placeholder="Kaloryczność do">
         </div>
 
         <div class="input__container meals__input-search">

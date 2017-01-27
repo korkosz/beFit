@@ -1,0 +1,20 @@
+<div class="select__container">
+    <div ng-class="{'checked': $ctrl.selectedOption}"
+         class="select__field" type="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        {{$ctrl.selectedOption || 'Rodzaj Posilku'}}
+
+        <span ng-if="!$ctrl.selectedOption"
+              class="select__arrow">⇕</span>
+        <span ng-if="$ctrl.selectedOption"
+              ng-click="$ctrl.clearOption();"
+              class="select__clear">x</span>
+    </div>
+    <ul class="select__menu dropdown-menu">
+        <li ng-repeat="option in $ctrl.options"
+            ng-click="$ctrl.selectOption(option);"
+            class="select__menu-item">
+            <a>{{option}}</a>
+        </li>
+    </ul>
+</div>

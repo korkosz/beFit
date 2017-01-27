@@ -15,6 +15,8 @@ module.exports = {
             $('#newMealModal').modal('show');
         };
 
+        this.mealTypes = ['Sniadanie', 'Obiad', 'Kolacja'];
+
         this.meals = [{
             name: 'Owsianka',
             type: 'Sniadanie',
