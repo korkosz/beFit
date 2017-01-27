@@ -1,14 +1,20 @@
 <section>
-    <!--Filters-->
-    <header ng-include="'/components/products list/filters/filters.template.html'">
+    <div class="header-btn-cont">
+        <span class="header-btn active">Wszystkie</span>
+        <span class="header-btn">Moje Produkty</span>
+    </div>
+    <div class="products-list">
+        <!--Filters-->
+        <header ng-include="'/components/products list/filters/filters.template.html'">
 
-    </header>
-    <!--List-->
-    <div class="list">
-        <products-list-item></products-list-item>
-        <products-list-item></products-list-item>
-        <products-list-item></products-list-item>
-        <products-list-item></products-list-item>
-        <products-list-item></products-list-item>
+        </header>
+        <!--List-->
+        <div class="list">
+            <products-list-item></products-list-item>
+            <products-list-item></products-list-item>
+            <products-list-item></products-list-item>
+            <products-list-item></products-list-item>
+            <products-list-item></products-list-item>
+        </div>
     </div>
 </section>
