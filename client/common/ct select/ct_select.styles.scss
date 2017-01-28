@@ -1,7 +1,39 @@
-.select__menu-item {
-  cursor: pointer;
+.select__container{
+  position: relative;
+  display: inline-block;
+  flex: 1 0 auto;
+  min-width: 0;
+  margin: $small-gutter;
+}
+
+.select__field{
+  position: relative;
+  padding: 0.8em 1em;
+  background: #f4f4f4;
+  font-size: 0.9rem;
+  display: block;
 
   &.checked {
     background: #98ffea;
   }
+}
+
+.select__field {
+  padding-right: 3em;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.select__arrow,
+.select__clear {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
