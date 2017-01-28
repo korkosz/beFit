@@ -21,7 +21,7 @@
     "server": "node server/index.js",
     "build:js": "browserify client/index.js -o client/dist/bundle.js -d",
     "watch:js": "onchange \"client/**/*.js\" -e \"client/dist/*.js\" -v -i -- npm run build:js",
-    "build:css": "node-sass --output-style expanded -o client/dist client/index.scss",
+    "build:css": "node-sass --output-style expanded --sourceMap true --sourceMapContents true -o client/dist client/index.scss",
     "watch:css": "onchange \"client/**/*.scss\" -e \"client/dist/index.css, client/dist/index.css.map\" -v -i -- npm run build:css",
     "browser": "browser-sync start --files \"client/dist/*.js, client/dist/*.css, client/**/*.html\" --proxy \"http://localhost:9000\" --startPath \"#!/home\" --reload-delay 500",
     "observe": "run-p watch:* browser"
