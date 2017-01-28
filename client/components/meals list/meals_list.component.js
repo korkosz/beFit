@@ -16,7 +16,7 @@ module.exports = {
         };
 
         this.mealTypes = ['Sniadanie', 'Obiad', 'Kolacja'];
-
+        this.cookingTimes = ['5min', '10min', '15min', '20min', '25min', '30min'];
         this.meals = [{
             name: 'Owsianka',
             type: 'Sniadanie',

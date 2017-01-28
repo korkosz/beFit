@@ -99,16 +99,4 @@ input{
 }
 
 //Pill
-.pill{
-    padding: 0.5em 1em;
-    background: #f4f4f4;
-    display: inline-block;
-    font-size: 0.8rem;
-    min-width: 4rem;
-    text-align: center;
-    margin: $small-gutter;
 
-    &.checked{
-        background: #a8d8fa;
-    }
-}

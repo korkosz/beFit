@@ -1,36 +1,3 @@
-<section>
-    <select style="display: block">
-        <option value="Sniadanie">Rodzaj posilku</option>
-        <option value="Sniadanie">Sniadanie</option>
-        <option value="Sniadanie">Sniadanie</option>
-        <option value="Sniadanie">Sniadanie</option>
-    </select>
-
-    <div>
-        <select>
-            <option value="Sniadanie">Czas wykonania posilku</option>
-            <option value="Sniadanie">Sniadanie</option>
-            <option value="Sniadanie">Sniadanie</option>
-            <option value="Sniadanie">Sniadanie</option>
-        </select>
-
-        <input placeholder="Kalorycznosc od" />
-        <input placeholder="Kalorycznosc do" />
-    </div>
-
-
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-    <input type="checkbox" /> <span>weganskie</span>
-
-    <input type="search" placeholder="Szukaj" style="display: block;">
-</section>
-
 <div class="meals__filters">
     <div class="l-flex-row small-gutter">
         <ct-select options="$ctrl.mealTypes"></ct-select>
@@ -54,15 +21,7 @@
     <div class="row">
         <div class="col-xs-6">
             <div class="cooking-time-container l-flex-row small-gutter">
-                <span class="pill">5min</span>
-                <span class="pill">10min</span>
-                <span class="pill checked">15min</span>
-                <span class="pill">20min</span>
-                <span class="pill">30min</span>
-                <span class="pill">20min</span>
-                <span class="pill">30min</span>
-                <span class="pill">20min</span>
-                <span class="pill">30min</span>
+                <ct-pill-group pills="$ctrl.cookingTimes"></ct-pill-group>
             </div>
         </div>
         <div class="col-xs-6">
