@@ -1,5 +1,5 @@
 module.exports = {
-    templateUrl: '/components/new meal modal/new_meal_modal.template.html',
+    templateUrl: '/modules/meals/modal new/new_meal_modal.template.html',
     controller() {
         let vm = this;
 
