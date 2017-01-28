@@ -1,0 +1,51 @@
+<header>Moje posilki 53</header>
+
+<!--Filters-->
+<section ng-if="!$ctrl.filtersOff"
+         ng-include="'/components/meals list/filters/filters.template.html'">
+</section>
+
+<!--Table-->
+<ct-list>
+    <!--header-->
+    <ct-list-header>
+        <ct-list-cell class="col-md-3">Posilek</ct-list-cell>
+        <ct-list-cell class="col-md-2">Rodzaj</ct-list-cell>
+        <ct-list-cell class="col-md-2">Czas</ct-list-cell>
+        <ct-list-cell class="col-md-2">Kalorycznosc</ct-list-cell>
+        <ct-list-cell class="col-md-2"></ct-list-cell>
+        <ct-list-cell class="col-md-1"></ct-list-cell>
+    </ct-list-header>
+    <!--body-->
+    <ct-list-body>
+        <!--this element will be repeated for every item in collection-->
+        <ct-list-row ng-repeat="meal in $ctrl.meals">
+            <ct-list-cell class="col-md-3">{{meal.name}}</ct-list-cell>
+            <ct-list-cell class="col-md-2">{{meal.type}}</ct-list-cell>
+            <ct-list-cell class="col-md-2">{{meal.time}}</ct-list-cell>
+            <ct-list-cell class="col-md-2">{{meal.calories}}</ct-list-cell>
+            <ct-list-cell class="col-md-2">
+                <button ng-click="$ctrl.showDetails()">Szczegoly</button>
+            </ct-list-cell>
+            <ct-list-cell class="col-md-1">
+                <button style="background: red;">U</button>
+            </ct-list-cell>
+        </ct-list-row>
+    </ct-list-body>
+    <!--actions-->
+    <ct-list-actions>
+        <button ng-click="$ctrl.showNewMealModal()">+ new meal</button>
+    </ct-list-actions>
+</ct-list>
+
+<!--Details modal-->
+<bootstrap-modal modal-id="detailsModal">
+    <meal-details></meal-details>
+</bootstrap-modal>
+
+<!--New Meal modal-->
+<bootstrap-modal modal-id="newMealModal">
+    <new-meal-modal></new-meal-modal>
+</bootstrap-modal>
+
+

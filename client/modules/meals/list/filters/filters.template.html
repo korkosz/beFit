@@ -1,0 +1,31 @@
+<div class="meals__filters">
+    <div class="l-flex-row small-gutter">
+        <ct-select options="$ctrl.mealTypes"></ct-select>
+
+        <div class="input__container">
+            <input type="number" name="" value="" class="input__field"
+                   placeholder="Kaloryczność od">
+        </div>
+
+        <div class="input__container">
+            <input type="number" name="" value="" class="input__field"
+                   placeholder="Kaloryczność do">
+        </div>
+
+        <div class="input__container meals__input-search">
+            <input type="search" name="" value="" class="input__field" placeholder="Szukaj">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="cooking-time-container l-flex-row small-gutter">
+                <ct-pill-group pills="$ctrl.cookingTimes"></ct-pill-group>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+        </div>
+    </div>
+</div>
