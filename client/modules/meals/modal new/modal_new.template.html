@@ -3,16 +3,16 @@
 
 <section id="firstTab"
          ng-hide="$ctrl.activeTab !== 'FIRST'"
-         ng-include="'/components/new meal modal/tabs/first_tab.html'"></section>
+         ng-include="'/modules/meals/modal new/tabs/first_tab.html'"></section>
 
 <section id="secondTab"
          ng-hide="$ctrl.activeTab !== 'SECOND'"
-         ng-include="'/components/new meal modal/tabs/second_tab.html'"></section>
+         ng-include="'/modules/meals/modal new/tabs/second_tab.html'"></section>
 
 <section id="thirdTab"
          ng-hide="$ctrl.activeTab !== 'THIRD'">
     <!--obczaj ze tu korzystamy z tego samego komponentu co na home jak dodajesz posilek inline poprzez ten button + -->
-    <new-meal-inline></new-meal-inline>
+    <meal-inline-new></meal-inline-new>
 
     <div>
         <button ng-click="$ctrl.prevTab()">Wroc</button>
