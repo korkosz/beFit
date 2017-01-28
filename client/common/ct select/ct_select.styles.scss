@@ -1,0 +1,7 @@
+.select__menu-item {
+  cursor: pointer;
+
+  &.checked {
+    background: #98ffea;
+  }
+}

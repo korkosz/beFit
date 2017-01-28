@@ -1,6 +1,6 @@
 body,
-html{
-    font-size: 14px;
+html {
+  font-size: 14px;
 }
 
 //Variables
@@ -9,94 +9,90 @@ $small-gutter: 0.2rem;
 
 // Globalne
 .select__container,
-.input__container{
-    position: relative;
-    display: inline-block;
-    flex: 1;
-    min-width: 0;
-    margin: $small-gutter;
+.input__container {
+  position: relative;
+  display: inline-block;
+  flex: 1;
+  min-width: 0;
+  margin: $small-gutter;
 }
 
 .select__field,
-.input__field{
-    position: relative;
-    padding: 0.8em 1em;
-    background: #f4f4f4;
-    font-size: 0.9rem;
+.input__field {
+  position: relative;
+  padding: 0.8em 1em;
+  background: #f4f4f4;
+  font-size: 0.9rem;
 
-    &.checked{
-        background: #98ffea;
-    }
+  &.checked {
+    background: #98ffea;
+  }
 }
-.select__field{
-    padding-right: 3em;
-    cursor: pointer;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+
+.select__field {
+  padding-right: 3em;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.input__field{
-    border: none;
-    outline: none;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+.input__field {
+  border: none;
+  outline: none;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
-    -webkit-appearance:none;
-    margin: 0;
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-input{
-    appearance:none;
-    -moz-appearance:none;
+
+input {
+  appearance: none;
+  -moz-appearance: none;
 }
 
 .select__arrow,
-.select__clear{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 3em;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.select__menu-item{
-    &.checked{
-        background: #98ffea;
-    }
+.select__clear {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 //Meals
-.meals__input-search{
-    flex: 2;
+.meals__input-search {
+  flex: 2;
 }
 
 //Layout
-.l-flex-row{
-    box-sizing: border-box;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -ms-flex: 0 1 auto;
-    -webkit-box-flex: 0;
-    flex: 0 1 auto;
-    -ms-flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+.l-flex-row {
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex: 0 1 auto;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 
-    &.small-gutter{
+  &.small-gutter {
     margin-left: -$small-gutter;
     margin-right: -$small-gutter;
-}
+  }
 }
 
-//Pill
 
