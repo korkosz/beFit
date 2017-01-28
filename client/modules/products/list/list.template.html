@@ -1,0 +1,20 @@
+<section>
+    <div class="header-btn-cont">
+        <span class="header-btn active">Wszystkie</span>
+        <span class="header-btn">Moje Produkty</span>
+    </div>
+    <div class="products__list-container">
+        <!--Filters-->
+        <header ng-include="'/modules/products/list/filters/filters.template.html'">
+
+        </header>
+        <!--List-->
+        <div class="products__list">
+            <product-list-item></product-list-item>
+            <product-list-item></product-list-item>
+            <product-list-item></product-list-item>
+            <product-list-item></product-list-item>
+            <product-list-item></product-list-item>
+        </div>
+    </div>
+</section>

@@ -3,5 +3,5 @@ module.exports = {
         data: '<',
         checked: '<'
     },
-    templateUrl: '/common/ct pill/ct_pill.template.html'
+    templateUrl: '/libs/ct/ct pill/ct_pill.template.html'
 };

@@ -1,9 +1,9 @@
 $default-font-size: 1.4rem;
 
 @import "common/index";
-@import "components/index";
 @import "views/index.scss";
 @import "modules/index";
+@import "libs/ct/index";
 
 header {
   font-size: 2.2rem;

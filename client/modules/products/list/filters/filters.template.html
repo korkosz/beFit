@@ -1,0 +1,57 @@
+<section class="products__filters">
+    <div class="l-flex-row small-gutter">
+        <!--Category -->
+        <ct-select class="select__container"
+                   title="Kategoria"
+                   options="$ctrl.categories"></ct-select>
+
+        <!--Subcategory-->
+        <ct-select class="select__container"
+                   title="Podkategoria"
+                   options="$ctrl.subcategories"></ct-select>
+
+        <!--Search-->
+        <div class="input__container input__search products__input-search">
+            <input type="search" name="" value="" class="input__field" placeholder="Szukaj">
+        </div>
+    </div>
+
+    <!-- Atributes -->
+    <section class="products__atributes">
+        <div class="row">
+            <!--Jak dasz kilku na raz te sama labelke to sie zaznaczenie cbx pojebie - olej to -->
+            <div class="col-xs-9">
+                <div class="col-xs-4">
+                    <ct-checkbox label="Bezglutenowy"
+                                 group="filterAttrs"
+                                 class="ct-checkbox__container">
+                </div>
+                <div class="col-xs-4">
+                    <ct-checkbox label="asdasdasda"
+                                 group="filterAttrs"
+                                 class="ct-checkbox__container">
+                </div>
+                <div class="col-xs-4">
+                    <ct-checkbox label="zxc zxc zxc "
+                                 group="filterAttrs"
+                                 class="ct-checkbox__container">
+                </div>
+                <div class="col-xs-4">
+                    <ct-checkbox label="efwf wef"
+                                 group="filterAttrs"
+                                 class="ct-checkbox__container">
+                </div>
+                <div class="col-xs-4">
+                    <ct-checkbox label="sdfsdfsdfsdfsdd"
+                                 group="filterAttrs"
+                                 class="ct-checkbox__container">
+                </div>
+                <div class="col-xs-4">
+                    <ct-checkbox label="cxvcxvxcvxcvxc"
+                                 group="filterAttrs"
+                                 class="ct-checkbox__container">
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

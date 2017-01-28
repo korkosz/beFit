@@ -1,6 +1,7 @@
 module.exports = {
-    templateUrl: '/common/ct select/ct_select.template.html',
+    templateUrl: '/libs/ct/ct select/ct_select.template.html',
     bindings: {
+        title: '@',
         options: '<'
     },
     controller() {
