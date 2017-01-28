@@ -3,7 +3,7 @@
 
         <!-- Na podstawie komponentu ct-select
         !!! Jak to bedziesz zastepowal komponentem to daj mu class="select__container" pls   -->
-        <section class="select__container">
+        <div class="select__container">
             <div ng-class="{'checked': $ctrl.selectedOption}"
                  class="select__field" type="button" data-toggle="dropdown"
                  aria-haspopup="true" aria-expanded="false">
@@ -23,11 +23,11 @@
                     <a>Mięso</a>
                 </li>
             </ul>
-        </section>
+        </div>
 
         <!-- Na podstawie komponentu ct-select
         !!! Jak to bedziesz zastepowal komponentem to daj mu class="select__container" pls   -->
-        <section class="select__container">
+        <div class="select__container">
             <div ng-class="{'checked': $ctrl.selectedOption}"
                  class="select__field" type="button" data-toggle="dropdown"
                  aria-haspopup="true" aria-expanded="false">
@@ -51,7 +51,7 @@
                     <a>Mięso</a>
                 </li>
             </ul>
-        </section>
+        </div>
 
         <div class="input__container input__search products__input-search">
             <input type="search" name="" value="" class="input__field" placeholder="Szukaj">
@@ -59,82 +59,83 @@
     </div>
 
     <!-- Atributes -->
-    <div class="row">
-        <div class="col-xs-3">
-            <!-- To mozesz zrobic komponentem jak chcesz
-            !!! Jak to bedziesz zastepowal komponentem to daj mu class="ct-checkbox__container" pls   -->
-            <section class="ct-checkbox__container">
-                <input type="checkbox"
-                        name="" value=""
-                        id="gluten-free"
-                        class="ct-checkbox__input">
-                <label for="gluten-free"
-                        class="ct-checkbox__label">
-                        Bezglutenowy
-                </label>
-            </section>
-            
-            <section class="ct-checkbox__container">
-                <input type="checkbox"
-                        name="" value=""
-                        id="gluten-free"
-                        class="ct-checkbox__input">
-                <label for="gluten-free"
-                        class="ct-checkbox__label">
-                        Bezglutenowy
-                </label>
-            </section>
+    <section class="products__atributes">
+        <div class="row">
+            <div class="col-xs-3">
+                <!-- To mozesz zrobic komponentem jak chcesz
+                !!! Jak to bedziesz zastepowal komponentem to daj mu class="ct-checkbox__container" pls   -->
+                <section class="ct-checkbox__container">
+                    <input type="checkbox"
+                            name="" value=""
+                            id="gluten-free"
+                            class="ct-checkbox__input">
+                    <label for="gluten-free"
+                            class="ct-checkbox__label">
+                            Bezglutenowy
+                    </label>
+                </section>
 
-            <section class="ct-checkbox__container">
-                <input type="checkbox"
-                        name="" value=""
-                        id="gluten-free"
-                        class="ct-checkbox__input">
-                <label for="gluten-free"
-                        class="ct-checkbox__label">
-                        Bezglutenowy
-                </label>
-            </section>
+                <section class="ct-checkbox__container">
+                    <input type="checkbox"
+                            name="" value=""
+                            id="gluten-free"
+                            class="ct-checkbox__input">
+                    <label for="gluten-free"
+                            class="ct-checkbox__label">
+                            Bezglutenowy
+                    </label>
+                </section>
+            </div>
+            <div class="col-xs-3">
+                <section class="ct-checkbox__container">
+                    <input type="checkbox"
+                            name="" value=""
+                            id="gluten-free"
+                            class="ct-checkbox__input">
+                    <label for="gluten-free"
+                            class="ct-checkbox__label">
+                            Bezglutenowy
+                    </label>
+                </section>
+
+                <section class="ct-checkbox__container">
+                    <input type="checkbox"
+                            name="" value=""
+                            id="gluten-free"
+                            class="ct-checkbox__input">
+                    <label for="gluten-free"
+                            class="ct-checkbox__label">
+                            Bezglutenowy
+                    </label>
+                </section>
+            </div>
+            <div class="col-xs-3">
+                <section class="ct-checkbox__container">
+                    <input type="checkbox"
+                            name="" value=""
+                            id="gluten-free"
+                            class="ct-checkbox__input">
+                    <label for="gluten-free"
+                            class="ct-checkbox__label">
+                            Bezglutenowy
+                    </label>
+                </section>
+
+                <section class="ct-checkbox__container">
+                    <input type="checkbox"
+                            name="" value=""
+                            id="gluten-free"
+                            class="ct-checkbox__input">
+                    <label for="gluten-free"
+                            class="ct-checkbox__label">
+                            Bezglutenowy
+                    </label>
+                </section>
+
+            </div>
+            <div class="col-xs-3">
+
+            </div>
         </div>
-        <div class="col-xs-3">
-            <section class="ct-checkbox__container">
-                <input type="checkbox"
-                        name="" value=""
-                        id="gluten-free"
-                        class="ct-checkbox__input">
-                <label for="gluten-free"
-                        class="ct-checkbox__label">
-                        Bezglutenowy
-                </label>
-            </section>
-
-            <section class="ct-checkbox__container">
-                <input type="checkbox"
-                        name="" value=""
-                        id="gluten-free"
-                        class="ct-checkbox__input">
-                <label for="gluten-free"
-                        class="ct-checkbox__label">
-                        Bezglutenowy
-                </label>
-            </section>
-
-            <section class="ct-checkbox__container">
-                <input type="checkbox"
-                        name="" value=""
-                        id="gluten-free"
-                        class="ct-checkbox__input">
-                <label for="gluten-free"
-                        class="ct-checkbox__label">
-                        Bezglutenowy
-                </label>
-            </section>
-        </div>
-        <div class="col-xs-3">
-
-        </div>
-        <div class="col-xs-3">
-
-        </div>
-    </div>
+    </section>
 </section>
