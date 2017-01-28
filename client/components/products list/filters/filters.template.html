@@ -1,49 +1,140 @@
-<section class="products-list-filters">
-    <div class="categories row">
-        <div class="col-md-4">
-            <select>
-                <option value="Sniadanie">Kategoria</option>
-                <option value="Sniadanie">Sniadanie</option>
-                <option value="Sniadanie">Sniadanie</option>
-                <option value="Sniadanie">Sniadanie</option>
-            </select>
-        </div>
+<section class="products__filters">
+    <div class="l-flex-row small-gutter">
 
-        <div class="col-md-4">
-            <select>
-                <option value="Sniadanie">Kategoria</option>
-                <option value="Sniadanie">Sniadanie</option>
-                <option value="Sniadanie">Sniadanie</option>
-                <option value="Sniadanie">Sniadanie</option>
-            </select>
-        </div>
+        <!-- Na podstawie komponentu ct-select
+        !!! Jak to bedziesz zastepowal komponentem to daj mu class="select__container" pls   -->
+        <section class="select__container">
+            <div ng-class="{'checked': $ctrl.selectedOption}"
+                 class="select__field" type="button" data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="false">
 
-        <div class="col-md-4">
-            <button>Szukaj</button>
+                Kategoria
+
+                <span class="select__arrow">⇕</span>
+            </div>
+            <ul class="select__menu dropdown-menu">
+                <li class="select__menu-item">
+                    <a>Owoce, warzywa i zioła</a>
+                </li>
+                <li class="select__menu-item">
+                    <a>Mleko, nabiał, jajka</a>
+                </li>
+                <li class="select__menu-item">
+                    <a>Mięso</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Na podstawie komponentu ct-select
+        !!! Jak to bedziesz zastepowal komponentem to daj mu class="select__container" pls   -->
+        <section class="select__container">
+            <div ng-class="{'checked': $ctrl.selectedOption}"
+                 class="select__field" type="button" data-toggle="dropdown"
+                 aria-haspopup="true" aria-expanded="false">
+
+                Podkategoria
+
+                <span ng-if="!$ctrl.selectedOption"
+                      class="select__arrow">⇕</span>
+                <span ng-if="$ctrl.selectedOption"
+                      ng-click="$ctrl.clearOption();"
+                      class="select__clear">x</span>
+            </div>
+            <ul class="select__menu dropdown-menu">
+                <li class="select__menu-item">
+                    <a>Owoce</a>
+                </li>
+                <li class="select__menu-item">
+                    <a>Warzywa</a>
+                </li>
+                <li class="select__menu-item">
+                    <a>Mięso</a>
+                </li>
+            </ul>
+        </section>
+
+        <div class="input__container input__search products__input-search">
+            <input type="search" name="" value="" class="input__field" placeholder="Szukaj">
         </div>
     </div>
 
-    <div class="attributes col-md-10 row">
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
+    <!-- Atributes -->
+    <div class="row">
+        <div class="col-xs-3">
+            <!-- To mozesz zrobic komponentem jak chcesz
+            !!! Jak to bedziesz zastepowal komponentem to daj mu class="ct-checkbox__container" pls   -->
+            <section class="ct-checkbox__container">
+                <input type="checkbox"
+                        name="" value=""
+                        id="gluten-free"
+                        class="ct-checkbox__input">
+                <label for="gluten-free"
+                        class="ct-checkbox__label">
+                        Bezglutenowy
+                </label>
+            </section>
+            
+            <section class="ct-checkbox__container">
+                <input type="checkbox"
+                        name="" value=""
+                        id="gluten-free"
+                        class="ct-checkbox__input">
+                <label for="gluten-free"
+                        class="ct-checkbox__label">
+                        Bezglutenowy
+                </label>
+            </section>
+
+            <section class="ct-checkbox__container">
+                <input type="checkbox"
+                        name="" value=""
+                        id="gluten-free"
+                        class="ct-checkbox__input">
+                <label for="gluten-free"
+                        class="ct-checkbox__label">
+                        Bezglutenowy
+                </label>
+            </section>
         </div>
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
+        <div class="col-xs-3">
+            <section class="ct-checkbox__container">
+                <input type="checkbox"
+                        name="" value=""
+                        id="gluten-free"
+                        class="ct-checkbox__input">
+                <label for="gluten-free"
+                        class="ct-checkbox__label">
+                        Bezglutenowy
+                </label>
+            </section>
+
+            <section class="ct-checkbox__container">
+                <input type="checkbox"
+                        name="" value=""
+                        id="gluten-free"
+                        class="ct-checkbox__input">
+                <label for="gluten-free"
+                        class="ct-checkbox__label">
+                        Bezglutenowy
+                </label>
+            </section>
+
+            <section class="ct-checkbox__container">
+                <input type="checkbox"
+                        name="" value=""
+                        id="gluten-free"
+                        class="ct-checkbox__input">
+                <label for="gluten-free"
+                        class="ct-checkbox__label">
+                        Bezglutenowy
+                </label>
+            </section>
         </div>
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
+        <div class="col-xs-3">
+
         </div>
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
-        </div>
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
-        </div>
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
-        </div>
-        <div class="col-md-4">
-            <input type="checkbox" /> <span>weganskie</span>
+        <div class="col-xs-3">
+
         </div>
     </div>
 </section>
