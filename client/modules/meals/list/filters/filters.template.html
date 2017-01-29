@@ -30,11 +30,11 @@
         </div>
         <!--Attributes-->
         <div class="col-xs-7">
-            <div class="col-xs-4" ng-repeat="attr in $ctrl.mealAttrs">
-                <ct-checkbox label="{{attr.label}}"
-                             group="attrs"
-                             class="ct-checkbox__container"></ct-checkbox>
-            </div>
+            <ct-checkbox ng-repeat="attr in $ctrl.mealAttrs"
+                         label="{{attr.label}}"
+                         group="attrs"
+                         class="ct-checkbox__container"></ct-checkbox>
+
         </div>
     </div>
 </section>

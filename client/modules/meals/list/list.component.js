@@ -2,7 +2,7 @@
 
 module.exports = {
     templateUrl: '/modules/meals/list/list.template.html',
-    controller(metadataFactory) {
+    controller(metadataFactory, mealsFactory) {
         const vm = this;
 
         vm.$onInit = function() {
@@ -15,6 +15,11 @@ module.exports = {
             vm.cookingTimes = metadataFactory.get('cookingTimes').map((time)=> {
                 return time.label;
             });
+
+            mealsFactory.getMeals()
+                .then((meals)=> {
+                    //vm.meals = meals;
+                });
         };
 
         vm.showDetails = function() {
