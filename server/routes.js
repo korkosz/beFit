@@ -6,7 +6,7 @@ const apiRoutes = require('./api/routes')
 module.exports = function (app) {
     app.use('/auth', authRouter);
     app.use('/api', apiRoutes);
-    app.get('/*', (req, res) => {
+    app.use('/client', (req, res) => {
         res.sendFile(path.resolve('client/index.html'));
     });
 };

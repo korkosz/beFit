@@ -32,7 +32,7 @@ module.exports = function (app) {
         //app.use(logger('dev'));
 
         //seed
-        require('./seed');
+        require('./seed/seed');
     }
 
     app.use(express.static(path.join(config.rootDir, 'client')));
