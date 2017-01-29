@@ -1,18 +1,23 @@
-products-list {
-  header {
-    .products-list-filters {
-      font-size: 1.4rem;
+.products__filters {
+    background: #f4f4f4;
+    padding: 2rem;
+    padding-bottom: 0;
 
-      .attributes, .categories {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .categories {
-        input, select, button {
-          width: 100%;
-        }
-      }
+    .select__field{
+        background: #fff;
     }
-  }
+
+    .input__field{
+        background: #fafafa;
+    }
+}
+
+.products__input-search{
+    flex: 2 0 0;
+}
+
+.products__atributes{
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
 }
