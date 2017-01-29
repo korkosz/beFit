@@ -9,7 +9,6 @@
     <div class="products__list-container">
         <!--Filters-->
         <header ng-include="'/modules/products/list/filters/filters.template.html'">
-
         </header>
         <!--List-->
         <div class="products__list">
@@ -19,5 +18,39 @@
             <product-list-item></product-list-item>
             <product-list-item></product-list-item>
         </div>
+
+        <!-- Pagination -->
+        <nav class="pagination__container">
+          <ul class="pagination__list">
+            <!-- Previous -->
+            <li class="pagination__item pagination__item-previous disabled">
+                <a class="pagination__item-inner" href="#">
+                    &laquo;
+                </a>
+            </li>
+            <!-- Page numbers -->
+            <li class="pagination__item">
+                <a class="pagination__item-inner" href="#">1</a>
+            </li>
+            <li class="pagination__item">
+                <a class="pagination__item-inner" href="#">2</a>
+            </li>
+            <li class="pagination__item active">
+                <a class="pagination__item-inner" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+                <a class="pagination__item-inner" href="#">4</a>
+            </li>
+            <li class="pagination__item">
+                <a class="pagination__item-inner" href="#">5</a>
+            </li>
+            <!-- Next -->
+            <li class="pagination__item pagination__item-next">
+                <a class="pagination__item-inner" href="#">
+                    &raquo;
+                </a>
+            </li>
+          </ul>
+        </nav>
     </div>
 </section>

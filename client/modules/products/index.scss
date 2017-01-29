@@ -4,3 +4,34 @@
     max-width: 900px;
     margin-top: 5rem;
 }
+
+//Paginacja
+.pagination__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.pagination__item.active{
+    .pagination__item-inner {
+        background: #8fc800;
+        color: #fff;
+    }
+}
+
+.pagination__item.disabled{
+    .pagination__item-inner {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
+
+.pagination__item-inner {
+    display: block;
+    padding: 0.5em 1em;
+    background: #fff;
+    margin: 0.1em;
+    text-decoration: none !important;
+    color: #666;
+}
