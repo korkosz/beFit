@@ -11,5 +11,7 @@ const app = angular.module('beFit', [
 
 //authentication config
 app.run(require('./common/auth/auth.states.config'));
-
+app.run((metadataFactory)=> {
+    metadataFactory.initMetadata();
+})
 module.exports = app;

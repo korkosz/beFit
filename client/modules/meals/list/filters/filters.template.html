@@ -1,6 +1,8 @@
 <section class="meals__filters">
     <div class="l-flex-row small-gutter">
-        <ct-select options="$ctrl.mealTypes"></ct-select>
+        <ct-select class="select__container"
+                   title="Rodzaj posiłku"
+                   options="$ctrl.mealTypes"></ct-select>
 
         <div class="input__container">
             <input type="number" name="" value="" class="input__field"
@@ -12,20 +14,27 @@
                    placeholder="Kaloryczność do">
         </div>
 
-        <div class="input__container input__search meals__input-search">
+        <!--Search-->
+        <div class="input__container input__search products__input-search">
             <input type="search" name="" value="" class="input__field" placeholder="Szukaj">
         </div>
     </div>
 
 
     <div class="row">
-        <div class="col-xs-6">
+        <!--Cooking times-->
+        <div class="col-xs-5">
             <div class="cooking-time-container l-flex-row small-gutter">
                 <ct-pill-group pills="$ctrl.cookingTimes"></ct-pill-group>
             </div>
         </div>
-        <div class="col-xs-6">
-
+        <!--Attributes-->
+        <div class="col-xs-7">
+            <div class="col-xs-4" ng-repeat="attr in $ctrl.mealAttrs">
+                <ct-checkbox label="{{attr.label}}"
+                             group="attrs"
+                             class="ct-checkbox__container"></ct-checkbox>
+            </div>
         </div>
     </div>
 </section>

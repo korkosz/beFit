@@ -2,21 +2,33 @@
 
 module.exports = {
     templateUrl: '/modules/meals/list/list.template.html',
-    controller() {
-        this.showDetails = function () {
+    controller(metadataFactory) {
+        const vm = this;
+
+        vm.$onInit = function() {
+            vm.mealAttrs = metadataFactory.get('mealAttrs');
+
+            //TODO: do zmiany - dyrektywy maja przyjmowac label i value - przez default _id bo mongo
+            vm.mealTypes = metadataFactory.get('mealTypes').map((type)=> {
+                return type.label;
+            });
+            vm.cookingTimes = metadataFactory.get('cookingTimes').map((time)=> {
+                return time.label;
+            });
+        };
+
+        vm.showDetails = function() {
             $('#detailsModal').modal('show');
         };
 
-        this.closeDetails = function () {
+        vm.closeDetails = function() {
             $('#detailsModal').modal('hide');
         }
 
-        this.showNewMealModal = function () {
+        vm.showNewMealModal = function() {
             $('#newMealModal').modal('show');
         };
 
-        this.mealTypes = ['Sniadanie', 'Obiad', 'Kolacja'];
-        this.cookingTimes = ['5min', '10min', '15min', '20min', '25min', '30min'];
         this.meals = [{
             name: 'Owsianka',
             type: 'Sniadanie',

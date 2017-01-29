@@ -5,6 +5,7 @@ const commonModule = angular.module('common', [
 ]);
 
 commonModule
+    .factory('metadataFactory', require('./metadata.factory'))
     .directive('bootstrapModal', require('./bootstrap modal/bootstrap_modal.directive'))
     .directive('ctList', require('./list/ct_list.directive.js'))
     .component('tripleContainer', require('./triple containter/triple_container.components'))
