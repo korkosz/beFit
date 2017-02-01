@@ -6,7 +6,13 @@ const schema = new mongoose.Schema({
         label: {
             type: String,
             required: true
-        }
+        },
+        subtypes: [{
+            label: {
+                type: String,
+                required: true
+            }
+        }]
     }]
 });
 
