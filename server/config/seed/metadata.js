@@ -3,7 +3,13 @@ module.exports = new Promise(function(resolve) {
     const Version = require('../../api/metadata/version.model.js');
     const Picklist = require('../../api/metadata/picklist.model.js');
 
-    Version.findOneAndUpdate({}, {version: 1}, {upsert: true});
+    Version.remove({}).then(()=> {
+        Version.create({
+            version: 1
+        });
+
+    });
+   // Version.findOneAndUpdate({}, {version: 1}, {upsert: true});
 
     const mealTypes = {
         '_id': '588f2cca567a9d102cc610c3',
