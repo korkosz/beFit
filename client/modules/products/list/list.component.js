@@ -11,6 +11,7 @@ module.exports = {
             vm.filters = {
                 ownOrAll: 'ALL'
             };
+            vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');
         };
 
