@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Meal = require('./meal.module');
+const Meal = require('./meal.model.js');
 
 router.get('/', function(req, res) {
     Meal.find({}).lean()

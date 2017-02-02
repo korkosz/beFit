@@ -1,7 +1,7 @@
 'use strict';
 
 const Picklist = require('../../api/metadata/picklist.model.js');
-const Meal = require('../../api/meal/meal.module');
+const Meal = require('../../api/meal/meal.model.js');
 
 const fakeNames = ['Owsianka', 'Ryż+kurczak', 'Jajo sadzone',
     'Owsianka v2', 'Kurczak po chinsku', 'Shake', 'Omlet', 'Kromka ze smalcem',

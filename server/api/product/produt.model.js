@@ -14,7 +14,8 @@ const schema = new mongoose.Schema({
     image: Buffer,
     owner: mongoose.Schema.Types.ObjectId,
     category: mongoose.Schema.Types.ObjectId,
-    subcategory: mongoose.Schema.Types.ObjectId
+    subcategory: mongoose.Schema.Types.ObjectId,
+    attributes: [mongoose.Schema.Types.ObjectId]
 });
 
 module.exports = mongoose.model('product', schema);

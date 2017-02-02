@@ -16,7 +16,8 @@ Product.remove({}).then(()=> {
         carbs: 40,
         owner: global.acc1,
         category: '588f2cca567a9d102cc610e8',
-        subcategory: '588f2cca567a9d102cc610ea'
+        subcategory: '588f2cca567a9d102cc610ea',
+        attributes: ['589383656bfd421fb0c2b6c8', '589383656bfd421fb0c2b6c7', '589383656bfd421fb0c2b6c6', '589383656bfd421fb0c2b6c5']
     }, {
         name: 'Jabłko',
         price: 0.60,
@@ -27,7 +28,8 @@ Product.remove({}).then(()=> {
         carbs: 30,
         owner: global.acc2,
         category: '588f2cca567a9d102cc610e0',
-        subcategory: '588f2cca567a9d102cc610e2'
+        subcategory: '588f2cca567a9d102cc610e2',
+        attributes: ['589383656bfd421fb0c2b6c8', '589383656bfd421fb0c2b6c7', '589383656bfd421fb0c2b6c6', '589383656bfd421fb0c2b6c5']
     }, {
         name: 'Platki Owsiane',
         price: 4.32,
@@ -38,7 +40,8 @@ Product.remove({}).then(()=> {
         carbs: 30,
         owner: global.acc1,
         category: '588f2cca567a9d102cc610d9',
-        subcategory: '588f2cca567a9d102cc610de'
+        subcategory: '588f2cca567a9d102cc610de',
+        attributes: ['589383656bfd421fb0c2b6c6', '589383656bfd421fb0c2b6c5']
     }, {
         name: 'Chleb razowy',
         price: 33,
@@ -49,7 +52,8 @@ Product.remove({}).then(()=> {
         carbs: 30,
         owner: global.acc2,
         category: '588f2cca567a9d102cc610e8',
-        subcategory: '588f2cca567a9d102cc610ea'
+        subcategory: '588f2cca567a9d102cc610ea',
+        attributes: ['589383656bfd421fb0c2b6c7']
     }, {
         name: 'Chleb razowy',
         price: 12,
@@ -60,7 +64,8 @@ Product.remove({}).then(()=> {
         carbs: 22,
         owner: global.acc2,
         category: '588f2cca567a9d102cc610e8',
-        subcategory: '588f2cca567a9d102cc610ea'
+        subcategory: '588f2cca567a9d102cc610ea',
+        attributes: ['589383656bfd421fb0c2b6c4', '589383656bfd421fb0c2b6c3']
     }];
 
     Product.insertMany(prods, function(err, res) {
