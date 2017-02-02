@@ -9,6 +9,13 @@
 }
 
 .ct-btn__primary {
-    background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%);
+    background: #8fc800;
     color: #fff;
+}
+
+.ct-btn__secondary{
+    border: 1px solid #8fc800;
+    background: transparent;
+    font-weight: 400;
+    color: #8fc800;
 }

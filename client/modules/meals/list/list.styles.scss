@@ -1,1 +1,37 @@
 @import "filters/filters.styles";
+
+.meals__meal-name,
+.meals__meal-type,
+.meals__meal-time,
+.meals__meal-calories,
+.meals__meal-buttons{
+    flex: 1 0 0;
+}
+
+.meals__meals-list{
+    margin-top: 3rem;
+}
+
+.list__row {
+    background: #fafafa;
+    margin: 0.4em 0;
+    font-size: 0.85rem;
+
+    &.header{
+        font-size: 0.75rem;
+        background: transparent;
+    }
+}
+
+.list__item{
+    padding: 1em 2em;
+
+    &.header{
+        padding-bottom: 0.5em;
+        color: #aaa;
+    }
+
+    .ct-btn{
+        padding: 0.4em 2em;
+    }
+}
