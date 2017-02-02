@@ -1,4 +1,4 @@
-<header>Moje posilki 53</header>
+<header class="module-header">Moje posilki 53</header>
 
 <!--Filters-->
 <section ng-if="!$ctrl.filtersOff"
@@ -31,7 +31,8 @@
     </tr>
     </tbody>
 </table>
-<button ng-click="$ctrl.showNewMealModal()">+ new meal</button>
+<button ng-click="$ctrl.showNewMealModal()"
+        class="ct-btn ct-btn__primary">+ new meal</button>
 
 <!--Details modal-->
 <bootstrap-modal modal-id="detailsModal">
@@ -42,5 +43,3 @@
 <bootstrap-modal modal-id="newMealModal">
     <meal-modal-new></meal-modal-new>
 </bootstrap-modal>
-
-

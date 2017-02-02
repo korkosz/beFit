@@ -2,7 +2,7 @@
 
 module.exports = function($http) {
     let apiVersion = Number(localStorage.getItem('apiVersion'));
-    let metadata = null;
+    let metadata = [];
 
     const initMetadata = function() {
         $http.get('/api/metadata/apiversion')

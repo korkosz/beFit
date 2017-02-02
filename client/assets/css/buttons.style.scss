@@ -1,0 +1,14 @@
+.ct-btn{
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.8em 2em;
+    margin-bottom: 0.3rem;
+    background: #f4f4f4;
+}
+
+.ct-btn__primary {
+    background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%);
+    color: #fff;
+}
