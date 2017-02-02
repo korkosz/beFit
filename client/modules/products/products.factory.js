@@ -1,13 +1,13 @@
 module.exports = function($http) {
 
-    const getProducts = function() {
-        return $http.get('/api/products')
-            .then(({data})=> {
-                return data;
-            })
-            .catch((err)=> {
-                console.error(err)
-            });
+    const getProducts = function(params) {
+        return $http.get('/api/products', {
+            params
+        }).then(({data})=> {
+            return data;
+        }).catch((err)=> {
+            console.error(err)
+        });
     };
 
     return {

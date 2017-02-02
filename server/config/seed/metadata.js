@@ -5,7 +5,7 @@ module.exports = new Promise(function(resolve) {
 
     Version.remove({}).then(()=> {
         Version.create({
-            version: 1
+            version: 2
         });
 
     });
@@ -122,9 +122,9 @@ module.exports = new Promise(function(resolve) {
         ]
     };
 
-    const productTypes = {
+    const productCategories = {
         '_id': '588f2cca567a9d102cc610d8',
-        'name': 'productTypes',
+        'name': 'productCategories',
         'values': [
             {
                 'label': 'Pieczywo',
@@ -211,7 +211,7 @@ module.exports = new Promise(function(resolve) {
 
     Picklist.remove({})
         .then(()=> {
-            Picklist.insertMany([mealTypes, cookingTtimes, mealAttrs, productTypes], function(err, res) {
+            Picklist.insertMany([mealTypes, cookingTtimes, mealAttrs, productCategories], function(err, res) {
                 resolve('success');
             });
         });

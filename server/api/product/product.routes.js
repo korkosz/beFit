@@ -5,9 +5,17 @@ const route = express.Router();
 
 const Product = require('./produt.model');
 
-route.get('/:filters?', function(req, res) {
-    //const filters = JSON.parse(req.params.filters) || {};
-    Product.find({}).lean()
+route.get('/', function(req, res) {
+    const filters = req.query || {};
+
+    if(filters.name) {
+        filters.name = new RegExp(`${filters.name}`, 'i');
+    }
+    if(parseBool(filters.own)) {
+        filters.owner = req.user.id;
+    }
+    delete filters.own;
+    Product.find(filters).lean()
         .then(result => {
             res.json(result);
         })
@@ -17,3 +25,29 @@ route.get('/:filters?', function(req, res) {
 });
 
 module.exports = route;
+
+function parseBool(str) {
+    if(str == null)
+        return false;
+
+    if(typeof str === 'boolean') {
+        return (str === true);
+    }
+
+    if(typeof str === 'string') {
+        if(str == "")
+            return false;
+
+        str = str.replace(/^\s+|\s+$/g, '');
+        if(str.toLowerCase() == 'true' || str.toLowerCase() == 'yes')
+            return true;
+
+        str = str.replace(/,/g, '.');
+        str = str.replace(/^\s*\-\s*/g, '-');
+    }
+
+    if(!isNaN(str))
+        return (parseFloat(str) != 0);
+
+    return false;
+}

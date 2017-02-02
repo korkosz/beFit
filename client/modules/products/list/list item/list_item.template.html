@@ -8,17 +8,17 @@
     <!-- Product details -->
     <div class="products__details">
         <!-- Name -->
-        <h4 class="products__product-name">Płatki owsiane</h4>
+        <h4 class="products__product-name">{{$ctrl.item.name}}</h4>
         <!-- Nutrition -->
         <div class="products__nutition">
             <p class="products__nutition-item">
-                Białko: 20.6g
+                Białko: {{$ctrl.item.proteins}}g
             </p>
             <p class="products__nutition-item">
-                Węglowodany: 52.5g
+                Węglowodany: {{$ctrl.item.carbs}}g
             </p>
             <p class="products__nutition-item">
-                Tłuszcz: 5.3g
+                Tłuszcz: {{$ctrl.item.fats}}g
             </p>
         </div>
         <!-- Atributes -->
@@ -35,10 +35,10 @@
     <!-- Price -->
     <div class="products__price">
         <div class="products__price-item">
-            1,99zł/szt
+            {{$ctrl.item.price}}zł/{{$ctrl.item.priceType}}
         </div>
         <div class="products__added-time">
-            10.02.2017
+            {{$ctrl.item.priceUpdateDate}}
         </div>
     </div>
 </div>

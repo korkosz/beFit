@@ -3,7 +3,7 @@
          class="select__field" type="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false">
 
-        {{$ctrl.selectedOption || $ctrl.title}}
+        {{$ctrl.selectedOption.label || $ctrl.selectedOption || $ctrl.title}}
 
         <span ng-if="!$ctrl.selectedOption"
               class="select__arrow">⇕</span>
@@ -15,7 +15,7 @@
         <li ng-repeat="option in $ctrl.options"
             ng-click="$ctrl.selectOption(option);"
             class="select__menu-item">
-            <a>{{option}}</a>
+            <a>{{option.label || option}}</a>
         </li>
     </ul>
 </div>

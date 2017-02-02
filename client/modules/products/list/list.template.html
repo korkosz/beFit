@@ -1,56 +1,59 @@
 <section>
     <div class="products__list-header">
-        <span class="products__list-tab active">Wszystkie</span>
-        <span class="products__list-tab">Moje Produkty</span>
-        <button type="button"
-                name="button"
-                class="ct-btn ct-btn__primary">Dodaj produkt</button>
+
+        <span ng-class="{'active': $ctrl.filters.ownOrAll === 'ALL'}"
+              ng-click="$ctrl.pickMyOrAll('ALL');"
+              class="products__list-tab">Wszystkie</span>
+        <span ng-class="{'active': $ctrl.filters.ownOrAll === 'OWN'}"
+              ng-click="$ctrl.pickMyOrAll('OWN');"
+              class="products__list-tab">Moje Produkty</span>
+
+        <button type="button" name="button"
+                class="ct-btn ct-btn__primary">Dodaj produkt
+        </button>
     </div>
     <div class="products__list-container">
         <!--Filters-->
         <header ng-include="'/modules/products/list/filters/filters.template.html'">
         </header>
         <!--List-->
-        <div class="products__list">
-            <product-list-item></product-list-item>
-            <product-list-item></product-list-item>
-            <product-list-item></product-list-item>
-            <product-list-item></product-list-item>
-            <product-list-item></product-list-item>
+        <div ng-repeat="product in $ctrl.products"
+             class="products__list">
+            <product-list-item item="product"></product-list-item>
         </div>
 
         <!-- Pagination -->
         <nav class="pagination__container">
-          <ul class="pagination__list">
-            <!-- Previous -->
-            <li class="pagination__item pagination__item-previous disabled">
-                <a class="pagination__item-inner" href="#">
-                    &laquo;
-                </a>
-            </li>
-            <!-- Page numbers -->
-            <li class="pagination__item">
-                <a class="pagination__item-inner" href="#">1</a>
-            </li>
-            <li class="pagination__item">
-                <a class="pagination__item-inner" href="#">2</a>
-            </li>
-            <li class="pagination__item active">
-                <a class="pagination__item-inner" href="#">3</a>
-            </li>
-            <li class="pagination__item">
-                <a class="pagination__item-inner" href="#">4</a>
-            </li>
-            <li class="pagination__item">
-                <a class="pagination__item-inner" href="#">5</a>
-            </li>
-            <!-- Next -->
-            <li class="pagination__item pagination__item-next">
-                <a class="pagination__item-inner" href="#">
-                    &raquo;
-                </a>
-            </li>
-          </ul>
+            <ul class="pagination__list">
+                <!-- Previous -->
+                <li class="pagination__item pagination__item-previous disabled">
+                    <a class="pagination__item-inner" href="#">
+                        &laquo;
+                    </a>
+                </li>
+                <!-- Page numbers -->
+                <li class="pagination__item">
+                    <a class="pagination__item-inner" href="#">1</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__item-inner" href="#">2</a>
+                </li>
+                <li class="pagination__item active">
+                    <a class="pagination__item-inner" href="#">3</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__item-inner" href="#">4</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__item-inner" href="#">5</a>
+                </li>
+                <!-- Next -->
+                <li class="pagination__item pagination__item-next">
+                    <a class="pagination__item-inner" href="#">
+                        &raquo;
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
 </section>
