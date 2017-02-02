@@ -35,7 +35,7 @@
             {{meal.type}}
         </div>
         <div class="meals__meal-time list__item">
-            {{meal.time}} min
+            <span class="glyphicon glyphicon-time"></span>{{meal.time}} min
         </div>
         <div class="meals__meal-calories list__item">
             {{meal.calories}} kcal
@@ -43,7 +43,7 @@
         <div class="meals__meal-buttons list__item">
             <button ng-click="$ctrl.showDetails()"
                     class="ct-btn ct-btn__secondary">Szczegoly</button>
-            <button style="background: red;">U</button>
+            <button class="ct-btn__trash glyphicon glyphicon-trash"></button>
         </div>
     </div>
 </div>

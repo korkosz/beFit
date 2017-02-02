@@ -6,6 +6,7 @@
     padding: 0.8em 2em;
     margin-bottom: 0.3rem;
     background: #f4f4f4;
+    border-radius: 0.25rem;
 }
 
 .ct-btn__primary {
@@ -18,4 +19,14 @@
     background: transparent;
     font-weight: 400;
     color: #8fc800;
+}
+
+.ct-btn__trash {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    display: block;
+    color: #f63636;
 }

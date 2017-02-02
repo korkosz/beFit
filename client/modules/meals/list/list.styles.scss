@@ -1,6 +1,8 @@
 @import "filters/filters.styles";
 
-.meals__meal-name,
+.meals__meal-name{
+    flex: 2 0 0;
+}
 .meals__meal-type,
 .meals__meal-time,
 .meals__meal-calories,
@@ -10,6 +12,13 @@
 
 .meals__meals-list{
     margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.meals__meal-time .glyphicon {
+    margin-right: 5px;
+    color: #8fc800;
+    font-size: 0.85em;
 }
 
 .list__row {
@@ -25,6 +34,8 @@
 
 .list__item{
     padding: 1em 2em;
+    display: flex;
+    align-items: center;
 
     &.header{
         padding-bottom: 0.5em;
@@ -33,5 +44,12 @@
 
     .ct-btn{
         padding: 0.4em 2em;
+        margin-bottom: 0;
+        font-size: 0.8em;
+    }
+
+    .ct-btn__trash{
+        margin-left: 1em;
+        font-size: 0.9rem;
     }
 }
