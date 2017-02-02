@@ -10,7 +10,7 @@ router.get('/apiversion', function(req, res) {
             res.json(result.version);
         })
         .catch((err)=> {
-            res.status(500).send('Error !!!! ');
+            res.status(500).send(err);
         });
 });
 

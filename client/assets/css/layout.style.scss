@@ -1,0 +1,12 @@
+.l-flex-row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.small-gutter {
+    margin-left: -$small-gutter;
+    margin-right: -$small-gutter;
+  }
+}
