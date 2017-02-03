@@ -6,6 +6,7 @@ module.exports = {
         vm.$onInit = function() {
             vm.activeTabIdx = 0;
 
+            vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');
         };
 
@@ -13,13 +14,13 @@ module.exports = {
             vm.subcategory = null;
         };
 
-        vm.save = function() {
-            vm.$onInit();
-            $('#newMealModal').modal('hide');
+        vm.save = function(private) {
+            //vm.$onInit();
+            $('#newProductModal').modal('hide');
         };
 
         vm.nextTab = function() {
-            if(vm.activeTabIdx < 4) {
+            if(vm.activeTabIdx < 5) {
                 vm.activeTabIdx++;
             }
         };
@@ -28,10 +29,6 @@ module.exports = {
             if(vm.activeTabIdx > 0) {
                 vm.activeTabIdx--;
             }
-        };
-
-        vm.firstFormInvalid = function() {
-            return !vm.name || !vm.category;
         };
     }
 };

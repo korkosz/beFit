@@ -24,7 +24,7 @@
                    options="$ctrl.category.subtypes"></ct-select>
     </div>
     <button type="submit"
-            ng-disabled="$ctrl.firstFormInvalid()"
+            ng-disabled="firstTabForm.$invalid"
             ng-click="$ctrl.nextTab()"
             class="btn btn-default">Dalej
     </button>
