@@ -1,4 +1,6 @@
 <input type="checkbox"
+       ng-change="$ctrl.onChange({val: $ctrl.val, label: $ctrl.label})"
+       ng-model="$ctrl.val"
        name="{{$ctrl.group}}"
        id="{{$ctrl.group + '_' + $ctrl.label}}"
        class="ct-checkbox__input">
