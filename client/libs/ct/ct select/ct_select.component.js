@@ -6,7 +6,8 @@ module.exports = {
     bindings: {
         ngChange: '&',
         title: '@',
-        options: '<'
+        options: '<',
+        required: '<'
     },
     controller() {
         const vm = this;
@@ -19,6 +20,12 @@ module.exports = {
             vm.ngModelCtrl.$render = function() {
                 vm.selectedOption = vm.ngModelCtrl.$viewValue;
             };
+
+            if(vm.required) {
+                vm.ngModelCtrl.$validators.required = function(modelValue, viewValue) {
+                    return !vm.ngModelCtrl.$isEmpty(modelValue || viewValue);
+                };
+            }
         };
 
         vm.selectOption = function(option) {

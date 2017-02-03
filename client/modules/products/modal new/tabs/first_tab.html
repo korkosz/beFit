@@ -6,15 +6,15 @@
     <div class="form-group">
         <!--Name-->
         <input required="required" placeholder="Nazwa produktu"
-               ng-model="$ctrl.name" class="form-control">
+               ng-model="$ctrl.name" class="form-control"> *
     </div>
     <div class="form-group">
         <!--Category-->
         <ct-select class="select__container"
-                   title="Kategoria"
+                   title="Kategoria" required="true"
                    ng-model="$ctrl.category"
                    ng-change="$ctrl.categoryChanged()"
-                   options="$ctrl.productCategs"></ct-select>
+                   options="$ctrl.productCategs"></ct-select> *
     </div>
     <div class="form-group">
         <!--Subcategory-->
