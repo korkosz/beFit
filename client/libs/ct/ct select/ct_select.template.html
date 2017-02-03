@@ -11,7 +11,8 @@
               ng-click="$ctrl.clearOption();"
               class="select__clear">x</span>
     </div>
-    <ul class="select__menu dropdown-menu">
+    <ul ng-if="$ctrl.options.length>0"
+        class="select__menu dropdown-menu">
         <li ng-repeat="option in $ctrl.options"
             ng-click="$ctrl.selectOption(option);"
             class="select__menu-item">

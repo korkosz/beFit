@@ -54,7 +54,11 @@ module.exports = {
                     vm.filters.attributes.indexOf(attr._id), 1);
             }
             vm.filterChanged();
-        }
+        };
+        
+        vm.openNewProductModal = function() {
+            $('#newProductModal').modal('show');
+        };
     }
 };
 

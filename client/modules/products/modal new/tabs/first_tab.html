@@ -1,0 +1,35 @@
+<header>
+    <div>Nowy Product</div>
+    <div>Krok 1 z 4</div>
+</header>
+<form name="firstTabForm">
+    <div class="form-group">
+        <!--Name-->
+        <input required="required" placeholder="Nazwa produktu"
+               ng-model="$ctrl.name" class="form-control">
+    </div>
+    <div class="form-group">
+        <!--Category-->
+        <ct-select class="select__container"
+                   title="Kategoria"
+                   ng-model="$ctrl.category"
+                   ng-change="$ctrl.categoryChanged()"
+                   options="$ctrl.productCategs"></ct-select>
+    </div>
+    <div class="form-group">
+        <!--Subcategory-->
+        <ct-select class="select__container"
+                   title="Podkategoria"
+                   ng-model="$ctrl.subcategory"
+                   options="$ctrl.category.subtypes"></ct-select>
+    </div>
+    <button type="submit"
+            ng-disabled="$ctrl.firstFormInvalid()"
+            ng-click="$ctrl.nextTab()"
+            class="btn btn-default">Dalej
+    </button>
+
+    <div>
+        * wymagane
+    </div>
+</form>

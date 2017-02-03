@@ -9,6 +9,7 @@
               class="products__list-tab">Moje Produkty</span>
 
         <button type="button" name="button"
+                ng-click="$ctrl.openNewProductModal()"
                 class="ct-btn ct-btn__primary">Dodaj produkt
         </button>
     </div>
@@ -57,3 +58,8 @@
         </nav>
     </div>
 </section>
+
+<!--New Product modal-->
+<bootstrap-modal modal-id="newProductModal">
+    <product-modal-new></product-modal-new>
+</bootstrap-modal>
