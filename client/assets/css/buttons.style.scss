@@ -6,9 +6,27 @@
     padding: 0.8em 2em;
     margin-bottom: 0.3rem;
     background: #f4f4f4;
+    border-radius: 0.25rem;
 }
 
 .ct-btn__primary {
-    background: linear-gradient(to bottom, #8fc800 0%,#8fc800 100%);
+    background: #8fc800;
     color: #fff;
+}
+
+.ct-btn__secondary{
+    border: 1px solid #8fc800;
+    background: transparent;
+    font-weight: 400;
+    color: #8fc800;
+}
+
+.ct-btn__trash {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    display: block;
+    color: #f63636;
 }
