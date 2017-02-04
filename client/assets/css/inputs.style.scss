@@ -1,38 +1,41 @@
 .input__container {
-  position: relative;
-  display: inline-block;
-  flex: 1 0 0;
-  min-width: 0;
-  margin: $small-gutter;
+    position: relative;
+    display: inline-block;
+    flex: 1 0 0;
+    min-width: 0;
+    margin: $small-gutter;
 }
 
 .input__field {
-  position: relative;
-  padding: 0.8em 1em;
-  background: #f4f4f4;
-  font-size: 0.9rem;
-  display: block;
+    position: relative;
+    padding: 0.8em 1em;
+    background: #f4f4f4;
+    font-size: 0.9rem;
+    display: block;
+    border: none;
+    outline: none;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-  &.checked {
-    background: #98ffea;
-  }
+    &.checked {
+        outline: 2px solid #e8fffd;
+    }
+
+
 }
 
-.input__field {
-  border: none;
-  outline: none;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.input__search .input__field{
+  background: #fafafa;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input {
-  appearance: none;
-  -moz-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
 }

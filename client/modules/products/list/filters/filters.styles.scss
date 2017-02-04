@@ -1,9 +1,5 @@
 .products__filters {
-    padding-bottom: 2rem;
-
-    .select__field{
-        background: #fff;
-    }
+    padding-bottom: 3rem;
 
     .input__field{
         background: #fafafa;
@@ -11,7 +7,7 @@
 }
 
 .products__input-search{
-    flex: 2 0 0;
+    flex: 2 0 0 !important;
 }
 
 .products__atributes{

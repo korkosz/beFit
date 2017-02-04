@@ -8,9 +8,29 @@
     display: block;
     font-size: 0.9rem;
     font-weight: 400;
-    margin-left: 0.5em;
+    margin-bottom: 0.6em;
 }
 
 .ct-checkbox__input{
     display: block;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin: -0.2em 0.5em 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    background: #f4f4f4;
+    transition: 0.2s;
+}
+input[type="checkbox"]:checked + label span {
+    background: url(../../../assets/images/check-icon.svg), #119fe1;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
