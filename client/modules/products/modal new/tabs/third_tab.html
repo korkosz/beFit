@@ -1,0 +1,43 @@
+<header>
+    <div>Nowy Product</div>
+    <div>Krok 3 z 4</div>
+</header>
+<section>
+    <form name="thirdTabForm">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <label>Białko *</label>
+                <input required="required" type="number"
+                       ng-model="$ctrl.proteins" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label>Węglowodany *</label>
+                <input required="required" type="number"
+                       ng-model="$ctrl.carbs" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label>Tłuszcze *</label>
+                <input required="required" type="number"
+                       ng-model="$ctrl.fats" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-md-6" ng-repeat="attr in $ctrl.productAttrs">
+            <ct-checkbox label="{{attr.label}}"
+                         on-change="$ctrl.attrToggled(val, label)"
+                         group="filterAttrs"
+                         class="ct-checkbox__container">
+            </ct-checkbox>
+        </div>
+
+    </form>
+</section>
+<button ng-click="$ctrl.prevTab()"
+        class="btn btn-default">
+    Wroc
+</button>
+<button ng-disabled="thirdTabForm.$invalid"
+        ng-click="$ctrl.nextTab()"
+        class="btn btn-default">
+    Dalej
+</button>

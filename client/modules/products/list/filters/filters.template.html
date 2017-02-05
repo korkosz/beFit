@@ -25,32 +25,9 @@
 
     <!-- Atributes -->
     <section class="products__atributes">
-        <ct-checkbox label="Bezglutenowy"
-                     group="filterAttrs"
-                     class="ct-checkbox__container">
-        </ct-checkbox>
-
-        <ct-checkbox label="asdasdasda"
-                     group="filterAttrs"
-                     class="ct-checkbox__container">
-        </ct-checkbox>
-
-        <ct-checkbox label="zxc zxc zxc "
-                     group="filterAttrs"
-                     class="ct-checkbox__container">
-        </ct-checkbox>
-
-        <ct-checkbox label="efwf wef"
-                     group="filterAttrs"
-                     class="ct-checkbox__container">
-        </ct-checkbox>
-
-        <ct-checkbox label="sdfsdfsdfsdfsdd"
-                     group="filterAttrs"
-                     class="ct-checkbox__container">
-        </ct-checkbox>
-
-        <ct-checkbox label="cxvcxvxcvxcvxc"
+        <ct-checkbox ng-repeat="attr in $ctrl.productAttrs"
+                     label="{{attr.label}}"
+                     on-change="$ctrl.attrToggled(val, label)"
                      group="filterAttrs"
                      class="ct-checkbox__container">
         </ct-checkbox>

@@ -15,6 +15,9 @@ route.get('/', function(req, res) {
         filters.owner = req.user.id;
     }
     delete filters.own;
+    if(filters.attributes) {
+        filters.attributes = {$all: filters.attributes};
+    }
     Product.find(filters).lean()
         .then(result => {
             res.json(result);

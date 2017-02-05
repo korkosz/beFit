@@ -23,11 +23,9 @@
         </div>
         <!-- Atributes -->
         <div class="products__list-atributes">
-            <p class="products__list-atributes-item">
-                wegetarianski
-            </p>
-            <p class="products__list-atributes-item">
-                bez cukru
+            <p ng-repeat="attr in $ctrl.item.attributes"
+               class="products__list-atributes-item">
+                {{attr}}
             </p>
         </div>
     </div>

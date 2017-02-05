@@ -5,11 +5,11 @@ module.exports = new Promise(function(resolve) {
 
     Version.remove({}).then(()=> {
         Version.create({
-            version: 2
+            version: 4
         });
 
     });
-   // Version.findOneAndUpdate({}, {version: 1}, {upsert: true});
+    // Version.findOneAndUpdate({}, {version: 1}, {upsert: true});
 
     const mealTypes = {
         '_id': '588f2cca567a9d102cc610c3',
@@ -209,9 +209,56 @@ module.exports = new Promise(function(resolve) {
         ]
     };
 
+    const productAttrs = {
+       '_id': '589383656bfd421fb0c2b6c0',
+        'name': 'productAttrs',
+        'values': [
+            {
+                'label': 'Bezglutenowy',
+                '_id': '589383656bfd421fb0c2b6c8',
+                'subtypes': []
+            },
+            {
+                'label': 'Diabetyczny',
+                '_id': '589383656bfd421fb0c2b6c7',
+                'subtypes': []
+            },
+            {
+                'label': 'Wysokobiałkowy',
+                '_id': '589383656bfd421fb0c2b6c6',
+                'subtypes': []
+            },
+            {
+                'label': 'Niskotłuszczowy',
+                '_id': '589383656bfd421fb0c2b6c5',
+                'subtypes': []
+            },
+            {
+                'label': 'Bez cukru',
+                '_id': '589383656bfd421fb0c2b6c4',
+                'subtypes': []
+            },
+            {
+                'label': 'Wegański',
+                '_id': '589383656bfd421fb0c2b6c3',
+                'subtypes': []
+            },
+            {
+                'label': 'Tani',
+                '_id': '589383656bfd421fb0c2b6c2',
+                'subtypes': []
+            },
+            {
+                'label': 'Ekologiczny',
+                '_id': '589383656bfd421fb0c2b6c1',
+                'subtypes': []
+            }
+        ]
+    };
+
     Picklist.remove({})
         .then(()=> {
-            Picklist.insertMany([mealTypes, cookingTtimes, mealAttrs, productCategories], function(err, res) {
+            Picklist.insertMany([mealTypes, cookingTtimes, mealAttrs, productCategories, productAttrs], function(err, res) {
                 resolve('success');
             });
         });

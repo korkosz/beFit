@@ -6,7 +6,10 @@ const schema = new mongoose.Schema({
         required: true
     },
     price: Number,
-    priceType: String,
+    priceType: {
+        type: String,
+        default: 'szt'
+    },
     priceUpdateDate: Number,
     proteins: Number,
     fats: Number,
@@ -14,7 +17,12 @@ const schema = new mongoose.Schema({
     image: Buffer,
     owner: mongoose.Schema.Types.ObjectId,
     category: mongoose.Schema.Types.ObjectId,
-    subcategory: mongoose.Schema.Types.ObjectId
+    subcategory: mongoose.Schema.Types.ObjectId,
+    attributes: [mongoose.Schema.Types.ObjectId],
+    private: {
+        type: Boolean,
+        default: false
+    }
 });
 
 module.exports = mongoose.model('product', schema);
