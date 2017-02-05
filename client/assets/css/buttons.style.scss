@@ -8,6 +8,33 @@
     margin-bottom: 0.3rem;
     text-transform: uppercase;
     border-radius: 0.3rem;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: calc(100% - 250px);
+        top: -500px;
+        width: 500px;
+        height: 500px;
+        transform-origin: center bottom;
+        background: #000;
+        z-index: -1;
+        transform: rotate(45deg);
+        opacity: 0.3;
+        transition: 1s;
+    }
+
+    &:hover:before,
+    &:active:before,
+    &:visited:before,
+    &:focus:before {
+        transform: translate(-250px, 250px) rotate(45deg);
+    }
+
 }
 
 .ct-btn__primary {
@@ -20,6 +47,10 @@
     background: rgba(232, 54, 54, 0.03);
     font-weight: 400;
     color: #e83636;
+
+    &:before {
+        background: #e83636;
+    }
 }
 
 .ct-btn__trash {
