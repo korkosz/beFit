@@ -1,5 +1,17 @@
 @import "filters/filters.styles";
 
+.meals_list-header {
+    display: flex;
+
+    .ct-btn{
+        margin-left: auto;
+    }
+}
+
+.meals__list-container{
+    padding-top: 1rem;
+}
+
 .meals__meal-name{
     flex: 2 0 0;
     color: #0e0e0e;

@@ -12,6 +12,7 @@
     overflow: hidden;
     transition: 0.5s;
     z-index: 1;
+    cursor: pointer;
 
     &:before {
         content: "";
@@ -21,10 +22,10 @@
         width: 500px;
         height: 500px;
         transform-origin: center bottom;
-        background: #000;
+        background: #fff;
         z-index: -1;
         transform: rotate(45deg);
-        opacity: 0.3;
+        opacity: 0.2;
         transition: 1s;
     }
 

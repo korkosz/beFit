@@ -21,20 +21,22 @@
     </div>
 
 
-    <div class="row">
-        <!--Cooking times-->
-        <div class="col-xs-5">
-            <div class="cooking-time-container l-flex-row small-gutter">
-                <ct-pill-group pills="$ctrl.cookingTimes"></ct-pill-group>
-            </div>
-        </div>
-        <!--Attributes-->
-        <div class="meals__atributes col-xs-7">
-            <ct-checkbox ng-repeat="attr in $ctrl.mealAttrs"
-                         label="{{attr.label}}"
-                         group="attrs"
-                         class="ct-checkbox__container"></ct-checkbox>
+    <!--Attributes-->
+    <div class="meals__atributes">
+        <ct-checkbox ng-repeat="attr in $ctrl.mealAttrs"
+                     label="{{attr.label}}"
+                     group="attrs"
+                     class="ct-checkbox__container"></ct-checkbox>
 
+    </div>
+
+    <!--Cooking times-->
+    <div class="meals__time-container">
+        <div class="meals__time-caption">
+            Czas przygotowania
+        </div>
+        <div class=" l-flex-row small-gutter">
+            <ct-pill-group pills="$ctrl.cookingTimes"></ct-pill-group>
         </div>
     </div>
 </section>

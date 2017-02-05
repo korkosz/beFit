@@ -5,4 +5,11 @@
 .meals__atributes{
     display: flex;
     flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.meals__time-caption {
+    font-size: 0.7rem;
+    color: #999;
+    margin-bottom: 0.5em;
 }
