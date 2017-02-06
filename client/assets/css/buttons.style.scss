@@ -45,12 +45,12 @@
 
 .ct-btn__secondary{
     border: 1px solid;
-    background: rgba(232, 54, 54, 0.03);
+    background: transparent;
     font-weight: 400;
     color: #e83636;
 
     &:before {
-        background: #e83636;
+        background: #ffabab;
     }
 }
 
