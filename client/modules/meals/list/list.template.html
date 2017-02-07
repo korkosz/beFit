@@ -1,55 +1,59 @@
-<header class="module-header">Posilki</header>
+<header class="module-header no-margin">Posilki</header>
 
-<!--Filters-->
-<section ng-if="!$ctrl.filtersOff"
-         ng-include="'/modules/meals/list/filters/filters.template.html'">
-</section>
+<div class="meals_list-header">
+        <button ng-click="$ctrl.showNewMealModal()"
+                class="ct-btn ct-btn__secondary">Dodaj posiłek</button>
+</div>
 
-<!-- Meals list -->
-<div class="meals__meals-list">
-    <!-- Header -->
-    <div class="l-flex-row list__row header">
-        <div class="meals__meal-name list__item header">
-            Posilek
-        </div>
-        <div class="meals__meal-type list__item header">
-            Rodzaj
-        </div>
-        <div class="meals__meal-time list__item header">
-            Czas przygotowania
-        </div>
-        <div class="meals__meal-calories list__item header">
-            Kalorczność
-        </div>
-        <div class="meals__meal-buttons list__item header">
-        </div>
-    </div>
+<div class="meals__list-container">
+    <!--Filters-->
+    <section ng-if="!$ctrl.filtersOff"
+             ng-include="'/modules/meals/list/filters/filters.template.html'">
+    </section>
 
-    <!-- Body -->
-    <div ng-repeat="meal in $ctrl.meals"
-        class="l-flex-row list__row">
-        <div class="meals__meal-name list__item">
-            {{meal.name}}
+    <!-- Meals list -->
+    <div class="meals__meals-list">
+        <!-- Header -->
+        <div class="l-flex-row list__row header">
+            <div class="meals__meal-name list__item header">
+                Posilek
+            </div>
+            <div class="meals__meal-type list__item header">
+                Rodzaj
+            </div>
+            <div class="meals__meal-time list__item header">
+                Czas przygotowania
+            </div>
+            <div class="meals__meal-calories list__item header">
+                Kalorczność
+            </div>
+            <div class="meals__meal-buttons list__item header">
+            </div>
         </div>
-        <div class="meals__meal-type list__item">
-            {{meal.type}}
-        </div>
-        <div class="meals__meal-time list__item">
-            <span class="glyphicon glyphicon-time"></span>{{meal.time}} min
-        </div>
-        <div class="meals__meal-calories list__item">
-            {{meal.calories}} kcal
-        </div>
-        <div class="meals__meal-buttons list__item">
-            <button ng-click="$ctrl.showDetails()"
-                    class="ct-btn ct-btn__secondary">Szczegoly</button>
-            <button class="ct-btn__trash glyphicon glyphicon-trash"></button>
+
+        <!-- Body -->
+        <div ng-repeat="meal in $ctrl.meals"
+            class="l-flex-row list__row">
+            <div class="meals__meal-name list__item">
+                {{meal.name}}
+            </div>
+            <div class="meals__meal-type list__item">
+                {{meal.type}}
+            </div>
+            <div class="meals__meal-time list__item">
+                <span class="glyphicon glyphicon-time"></span>{{meal.time}} min
+            </div>
+            <div class="meals__meal-calories list__item">
+                {{meal.calories}} kcal
+            </div>
+            <div class="meals__meal-buttons list__item">
+                <button ng-click="$ctrl.showDetails()"
+                        class="ct-btn ct-btn__secondary">Szczegoly</button>
+                <button class="ct-btn__trash glyphicon glyphicon-trash"></button>
+            </div>
         </div>
     </div>
 </div>
-
-<button ng-click="$ctrl.showNewMealModal()"
-        class="ct-btn ct-btn__primary">+ new meal</button>
 
 <!--Details modal-->
 <bootstrap-modal modal-id="detailsModal">

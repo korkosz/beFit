@@ -9,8 +9,31 @@ $small-gutter: 0.2rem;
   min-width: 4rem;
   text-align: center;
   margin: $small-gutter;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
 
   &.checked{
-    background: #a8d8fa;
+    background: #119fe1;
+    color: #fff;
+  }
+
+  &:before {
+      content: "";
+      position: absolute;
+      left: calc(100% - 50px);
+      top: -100px;
+      width: 100px;
+      height: 100px;
+      transform-origin: center bottom;
+      background: #119fe1;
+      z-index: -1;
+      transform: rotate(45deg);
+      opacity: 0.3;
+      transition: 0.5s;
+  }
+
+  &:hover:before{
+      transform: translate(-50px, 50px) rotate(45deg);
   }
 }

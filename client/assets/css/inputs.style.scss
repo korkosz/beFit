@@ -4,6 +4,10 @@
     flex: 1 0 0;
     min-width: 0;
     margin: $small-gutter;
+
+    .input__field{
+      background: #fafafa;
+    }
 }
 
 .input__field {
@@ -21,12 +25,6 @@
     &.checked {
         outline: 2px solid #e8fffd;
     }
-
-
-}
-
-.input__search .input__field{
-  background: #fafafa;
 }
 
 input::-webkit-outer-spin-button,

@@ -12,3 +12,20 @@ input.ng-dirty.ng-invalid {
 ct-select.ng-dirty.ng-invalid {
   color: red;
 }
+
+.modal-content {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+.modal-body {
+    padding: 3rem;
+    padding-bottom: 4rem;
+}
+
+.modal__header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
