@@ -20,12 +20,19 @@ ct-select.ng-dirty.ng-invalid {
 }
 
 .modal-body {
-    padding: 3rem;
-    padding-bottom: 4rem;
+    padding: 3rem 6rem 4rem 6rem;
 }
 
 .modal__header {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
+}
+
+.modal__steps{
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 2rem;
+    color: #999;
 }

@@ -1,3 +1,7 @@
+.ct-btn__wrapper {
+    margin-top: 1.5rem;
+}
+
 .ct-btn{
     border: none;
     outline: none;
@@ -29,13 +33,20 @@
         transition: 1s;
     }
 
-    &:hover:before,
+    &:not([disabled]):hover:before,
     &:active:before,
     &:visited:before,
     &:focus:before {
         transform: translate(-250px, 250px) rotate(45deg);
     }
 
+    &[disabled]{
+        background: #ddd;
+    }
+
+    &.right{
+        margin-left: auto;
+    }
 }
 
 .ct-btn__primary {

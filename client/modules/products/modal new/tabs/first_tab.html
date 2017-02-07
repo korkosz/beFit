@@ -1,33 +1,35 @@
 <header>
     <div class="modal__header">Nowy Product</div>
-    <div>Krok 1 z 4</div>
+    <div class="modal__steps">Krok 1 z 4</div>
 </header>
 <form name="firstTabForm">
-    <div class="form-group">
+    <div class="l-flex-row small-gutter">
         <!--Name-->
-        <input required="required" placeholder="Nazwa produktu"
-               ng-model="$ctrl.name" class="form-control"> *
+        <div class="input__container small-gutter">
+            <input required="required" placeholder="Nazwa produktu"
+                   ng-model="$ctrl.name" class="input__field higher">
+        </div>
     </div>
-    <div class="form-group">
+    <div class="l-flex-row small-gutter">
         <!--Category-->
         <ct-select class="select__container"
                    title="Kategoria" required="true"
                    ng-model="$ctrl.category"
                    ng-change="$ctrl.categoryChanged()"
-                   options="$ctrl.productCategs"></ct-select> *
-    </div>
-    <div class="form-group">
+                   options="$ctrl.productCategs"></ct-select>
         <!--Subcategory-->
         <ct-select class="select__container"
                    title="Podkategoria"
                    ng-model="$ctrl.subcategory"
                    options="$ctrl.category.subtypes"></ct-select>
     </div>
+    <div class="ct-btn__wrapper l-flex-row">
     <button type="submit"
             ng-disabled="firstTabForm.$invalid"
             ng-click="$ctrl.nextTab()"
-            class="ct-btn ct-btn__primary">Dalej
+            class="ct-btn ct-btn__primary right">Dalej
     </button>
+    </div>
 
     <div>
         * wymagane

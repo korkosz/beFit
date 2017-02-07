@@ -6,13 +6,22 @@
     margin: $small-gutter;
 
     .input__field{
-      background: #fafafa;
+        background: #f4f4f4;
+
+        &.lighter{
+            background: #fafafa;
+        }
+
+        &.higher{
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
     }
 }
 
 .input__field {
     position: relative;
-    padding: 0.8em 1em;
+    padding: 0.8em 0.9rem;
     background: #f4f4f4;
     font-size: 0.9rem;
     display: block;
