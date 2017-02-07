@@ -1,3 +1,30 @@
-pierwszy tab
+<header>
+    <div class="modal__header">Nowy Posiłek</div>
+    <div class="modal__steps">Krok 1 z 3</div>
+</header>
+<form name="firstTabForm">
+    <div class="l-flex-row small-gutter">
+        <!--Name-->
+        <div class="input__container small-gutter">
+            <input required="required" placeholder="Nazwa posiłku"
+                   class="input__field higher">
+        </div>
+        <span class="input__required">*</span>
+    </div>
+    <div class="l-flex-row small-gutter">
+        <!--Category-->
+        <ct-select class="select__container"
+                   required="true"></ct-select>
+        <span class="input__required">*</span>
+    </div>
+    <div class="ct-btn__wrapper l-flex-row center">
+    <button type="submit"
+            ng-click="$ctrl.nextTab()"
+            class="ct-btn ct-btn__primary bigger">Dalej
+    </button>
+    </div>
 
-<button ng-click="$ctrl.nextTab()">Dalej</button>
+    <div class="modal__aditional-info">
+        <p><span class="required">*</span>wymagane</p>
+    </div>
+</form>

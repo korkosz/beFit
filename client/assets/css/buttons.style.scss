@@ -9,6 +9,7 @@
     font-size: 0.6rem;
     letter-spacing: 0.1em;
     padding: 1em 2.5em;
+    margin: 0.2rem;
     margin-bottom: 0.3rem;
     text-transform: uppercase;
     border-radius: 0.3rem;
@@ -46,6 +47,14 @@
 
     &.right{
         margin-left: auto;
+    }
+
+    &.center{
+        margin: auto;
+    }
+
+    &.bigger{
+        font-size: 0.65rem;
     }
 }
 

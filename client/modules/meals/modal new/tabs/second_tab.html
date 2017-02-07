@@ -1,3 +1,22 @@
-TO JEST DRUGI TAB
-<button ng-click="$ctrl.prevTab()">Wroc</button>
-<button ng-click="$ctrl.nextTab()">Dalej</button>
+<header>
+    <div class="modal__header">Nowy Posiłek</div>
+    <div class="modal__steps">Krok 2 z 3</div>
+</header>
+<form name="secondTabForm">
+    <div class="l-flex-row small-gutter">
+
+    </div>
+    <div class="l-flex-row small-gutter">
+        
+    </div>
+    <div class="ct-btn__wrapper l-flex-row center">
+        <button type="submit"
+                ng-click="$ctrl.prevTab()"
+                class="ct-btn ct-btn__secondary bigger">Wróć
+        </button>
+        <button type="submit"
+                ng-click="$ctrl.nextTab()"
+                class="ct-btn ct-btn__primary bigger">Dalej
+        </button>
+    </div>
+</form>

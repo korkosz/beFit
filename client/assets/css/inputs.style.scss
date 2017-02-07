@@ -46,3 +46,11 @@ input {
     appearance: none;
     -moz-appearance: none;
 }
+
+.input__required {
+    position: absolute;
+    left: -0.7rem;
+    top: 0.3rem;
+    font-size: 1.2rem;
+    color: #e83636;
+}

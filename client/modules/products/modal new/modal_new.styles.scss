@@ -20,7 +20,11 @@ ct-select.ng-dirty.ng-invalid {
 }
 
 .modal-body {
-    padding: 3rem 6rem 4rem 6rem;
+    padding: 4rem 6rem 4rem 6rem;
+}
+
+.modal-dialog {
+    margin-top: 8rem;
 }
 
 .modal__header {
@@ -30,9 +34,27 @@ ct-select.ng-dirty.ng-invalid {
 }
 
 .modal__steps{
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: center;
-    margin-top: 0.5em;
-    margin-bottom: 2rem;
+    margin-top: 0.4em;
+    margin-bottom: 1.5rem;
     color: #999;
+}
+
+.modal__aditional-info{
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+    margin-top: 0.7em;
+    position: relative;
+
+    p{
+        display: inline-block;
+        position: relative;
+    }
+
+    .required{
+        position: absolute;
+        left: -0.7em;
+    }
 }
