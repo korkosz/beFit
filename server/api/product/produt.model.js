@@ -10,7 +10,15 @@ const schema = new mongoose.Schema({
         type: String,
         default: 'szt'
     },
-    priceUpdateDate: Number,
+
+    priceUpdateDate: {
+        type: Number,
+        default() {
+            if(this.isNew) {
+                return (new Date()).valueOf();
+            }
+        }
+    },
     proteins: Number,
     fats: Number,
     carbs: Number,

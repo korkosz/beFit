@@ -9,12 +9,17 @@ module.exports = function($http, metadataFactory) {
             console.error(err)
         });
     };
-
-    return {
-        getProducts
+    
+    const saveNewProduct = function(newProduct) {
+        return $http.post('/api/products', newProduct);
     };
 
+    return {
+        getProducts,
+        saveNewProduct
+    };
 
+    ///
     function populateAttrs(products) {
         const meta = metadataFactory.get('productAttrs');
 

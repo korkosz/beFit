@@ -1,6 +1,6 @@
 module.exports = {
     templateUrl: '/modules/products/list/list.template.html',
-    controller(productsFactory, metadataFactory) {
+    controller(productsFactory, metadataFactory, $timeout) {
         const vm = this;
 
         vm.$onInit = function() {
@@ -13,6 +13,9 @@ module.exports = {
             };
             vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');
+
+            //used to reset modal cmp
+            vm.clearModal = true;
         };
 
         vm.categoryChanged = function() {
@@ -55,43 +58,34 @@ module.exports = {
             }
             vm.filterChanged();
         };
-        
+
         vm.openNewProductModal = function() {
             $('#newProductModal').modal('show');
+
+            $('#newProductModal').on('hide.bs.modal', function() {
+                if(vm.newProductModalStatus === 201) {
+                    productsFactory.getProducts().then((result)=> {
+                        vm.products = result;
+                    });
+                }
+            });
+
+            $('#newProductModal').on('hidden.bs.modal', function() {
+                clearModal();
+            });
+
+            $('#newProductModal').on('show.bs.modal', function() {
+                vm.newProductModalStatus = null;
+            });
         };
+
+        function clearModal() {
+            $timeout(()=> {
+                vm.clearModal = false;
+            });
+            $timeout(()=> {
+                vm.clearModal = true;
+            });
+        }
     }
 };
-
-/**
- 0
- _id
- :
- "5893470891b5ff20d0654036"
- carbs
- :
- 30
- category
- :
- "588f2cca567a9d102cc610e8"
- fats
- :
- 0.3
- name
- :
- "Chleb razowy"
- price
- :
- 3.6
- priceType
- :
- "szt"
- priceUpdateDate
- :
- 1486046984030
- proteins
- :
- 5
- subcategory
- :
- "588f2cca567a9d102cc610ea"
- */

@@ -27,6 +27,17 @@ route.get('/', function(req, res) {
         });
 });
 
+route.post('/', (req, res)=> {
+    const product = req.body;
+    Product.create(product)
+        .then((result)=> {
+            res.status(201).end();
+        })
+        .catch((err)=> {
+            res.status(500).send(err);
+        });
+});
+
 module.exports = route;
 
 function parseBool(str) {
