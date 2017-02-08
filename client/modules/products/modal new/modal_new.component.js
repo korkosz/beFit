@@ -5,7 +5,7 @@ module.exports = {
         modalStatus: '='
     },
     templateUrl: '/modules/products/modal new/modal_new.template.html',
-    controller(metadataFactory, productsFactory, auth, $timeout) {
+    controller(metadataFactory, productsFactory, auth, $timeout, $scope) {
         const vm = this;
 
         vm.$onInit = function() {
@@ -65,6 +65,19 @@ module.exports = {
         vm.prevTab = function() {
             if(vm.activeTabIdx > 0) {
                 vm.activeTabIdx--;
+            }
+        };
+
+        $scope.$watch(function() {
+            return vm.file;
+        }, function() {
+            vm.upload(vm.file);
+        });
+
+        vm.upload = function(file) {
+            if(file && !file.$error) {
+                //zachowaj jako blob
+                debugger;
             }
         };
     }

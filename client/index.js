@@ -6,7 +6,8 @@ const app = angular.module('beFit', [
     require('./views').name,
     require('./modules/meals').name,
     require('./modules/products').name,
-    require('./libs/ct').name
+    require('./libs/ct').name,
+    require('ng-file-upload')
 ]);
 
 //authentication config

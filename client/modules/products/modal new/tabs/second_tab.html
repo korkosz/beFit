@@ -3,7 +3,14 @@
     <div>Krok 2 z 4</div>
 </header>
 <section>
-    <img src="/assets/images/add_photo.jpg" alt="Dodaj zdjecie">
+    <div ngf-drop ngf-select ng-model="$ctrl.file" class="drop-box"
+         ngf-drag-over-class="'dragover'" accept="image/*"
+         ngf-pattern="'image/*'">
+    </div>
+    <div ngf-no-file-drop>
+        File Drag/Drop is not supported for this browser
+    </div>
+
     <div>Dodanie zdjęcia jest opcjonalne</div>
 </section>
 <button ng-click="$ctrl.prevTab()"
