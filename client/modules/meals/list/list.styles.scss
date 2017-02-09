@@ -3,74 +3,86 @@
 .meals_list-header {
     display: flex;
 
-    .ct-btn{
-        margin-left: auto;
-    }
 }
 
 .meals__list-container{
     padding-top: 1rem;
 }
 
-.meals__meal-name{
-    flex: 2 0 0;
-    color: #0e0e0e;
-    font-size: 0.85rem;
+.meals__meals-list {
+    margin-top: 4rem;
 }
-.meals__meal-buttons{
-    flex-basis: 13rem;
-    justify-content: flex-end;
+
+.meals__img-wrapper{
+    flex: 0 0 10rem;
+    background: #eee;
+    margin-right: 2rem;
 }
-.meals__meal-type,
-.meals__meal-time,
-.meals__meal-calories{
+
+.meals__img{
+    width: 100%;
+    opacity: 0; // Temporary!!!
+}
+
+.meals__list-desc{
     flex: 1 0 0;
-}
 
-.meals__meals-list{
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-}
-
-.meals__meal-time .glyphicon {
-    margin-right: 5px;
-    color: #8fc800;
-    font-size: 0.85em;
-}
-
-.list__row {
-    background: #fafafa;
-    margin: 0.4em 0;
-    font-size: 0.9rem;
-    color: #707070;
-
-    &.header{
-        font-size: 0.75rem;
-        background: transparent;
-    }
-}
-
-.list__item{
-    padding: 0.8rem 1.5rem;
-    display: flex;
-    align-items: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-    &.header{
-        padding-bottom: 0.5em;
-        color: #aaa;
-    }
-
-    .ct-btn{
-        padding: 0.4em 2em;
+    &>.l-flex-row{
+        align-items: baseline;
         margin-bottom: 0;
-        font-size: 0.7rem;
     }
+}
+
+.meals__list-row {
+    padding: 1.5rem;
+    background: #fafafa;
+    margin-bottom: 0.5rem;
+
+    &:hover .ct-btn__trash{
+        opacity: 1;
+        margin-right: 0.5rem;
+    }
+}
+
+.meals__meal-name {
+    font-size: 1.3rem;
+}
+
+.meals__meal-time{
+    margin-left: 1.7em;
+    font-size: 0.9rem;
+
+    .glyphicon-time{
+        color: #119fe1;
+        margin-right: 0.35em;
+        font-size: 0.8em;
+    }
+}
+
+.meals__meal-type {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.meals__meal-calories {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #119fe1;
+    margin-bottom: 1.2rem;
+}
+
+.meals__meal-buttons {
+    display: flex;
+    align-items: flex-start;
 
     .ct-btn__trash{
-        margin-left: 1em;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
         font-size: 0.9rem;
+        opacity: 0;
+        margin-right: 0;
+        width: -0.5rem;
+        transition: 0.5s;
     }
 }
