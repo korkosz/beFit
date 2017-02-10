@@ -12,9 +12,10 @@
 }
 
 .products__list-tab {
+    position: relative;
     font-size: 0.8rem;
     cursor: pointer;
-    padding-right: 2em;
+    margin-right: 2em;
     display: inline-block;
     color: #ccc;
     transition: 0.2s;
@@ -22,6 +23,17 @@
     &.active{
         color: #333;
         font-weight: 700;
+
+        &:after{
+            content: "";
+            width: 1rem;
+            height: 0.3rem;
+            background: #ff3232;
+            position: absolute;
+            bottom: -0.7em;
+            left: calc(50% - 0.5rem);
+            border-radius: 2rem;
+        }
     }
 }
 

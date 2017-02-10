@@ -56,6 +56,11 @@
     &.bigger{
         font-size: 0.65rem;
     }
+
+    &.smaller{
+        font-size: 0.55rem;
+        padding: 0.75em 2em;
+    }
 }
 
 .ct-btn__primary {
