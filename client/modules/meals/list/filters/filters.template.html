@@ -1,34 +1,46 @@
 <section class="meals__filters">
     <div class="l-flex-row small-gutter">
+        <!--Meal Type-->
         <ct-select class="select__container"
                    title="Rodzaj posiłku"
+                   ng-change="$ctrl.filterChanged()"
+                   ng-model="$ctrl.filters.type"
                    options="$ctrl.mealTypes"></ct-select>
 
+        <!--Calories From-->
         <div class="input__container meals__calories-input">
-            <input type="number" name="" value="" class="input__field"
-                   placeholder="Kaloryczność od">
+            <input ng-model-options="{debounce: 1000}" type="Number"
+                   ng-model="$ctrl.filters.caloriesFrom"
+                   ng-change="$ctrl.filterChanged()"
+                   class="input__field" placeholder="Kaloryczność od">
         </div>
 
+        <!--Calories To-->
         <div class="input__container meals__calories-input">
-            <input type="number" name="" value="" class="input__field"
-                   placeholder="Kaloryczność do">
+            <input ng-model-options="{debounce: 1000}" type="Number"
+                   ng-model="$ctrl.filters.caloriesTo"
+                   ng-change="$ctrl.filterChanged()"
+                   class="input__field" placeholder="Kaloryczność do">
         </div>
 
         <!--Search-->
         <div class="input__container input__search">
-            <input type="search" name="" value="" class="input__field lighter" placeholder="Szukaj">
+            <input ng-model-options="{debounce: 1000}"
+                   ng-model="$ctrl.filters.name"
+                   ng-change="$ctrl.filterChanged()"
+                   type="search" class="input__field lighter" placeholder="Szukaj">
         </div>
     </div>
 
-
-    <!--Attributes-->
-    <div class="meals__atributes">
+    <!-- Atributes -->
+    <section class="products__atributes">
         <ct-checkbox ng-repeat="attr in $ctrl.mealAttrs"
                      label="{{attr.label}}"
-                     group="attrs"
-                     class="ct-checkbox__container"></ct-checkbox>
-
-    </div>
+                     on-change="$ctrl.attrToggled(val, label)"
+                     group="filterAttrs"
+                     class="ct-checkbox__container">
+        </ct-checkbox>
+    </section>
 
     <!--Cooking times-->
     <div class="meals__time-container">

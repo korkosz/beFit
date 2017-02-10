@@ -22,6 +22,34 @@ module.exports = {
                 });
         };
 
+        vm.filterChanged = function() {
+            const filters = {
+                name: vm.filters.name && vm.filters.name.length ? vm.filters.name : null,
+                type: vm.filters.type && vm.filters.type._id,
+                own: vm.filters.ownOrAll === 'OWN',
+                attributes: vm.filters.attributes
+            };
+
+            // productsFactory.getProducts(filters).then((result)=> {
+            //     vm.products = result;
+            // });
+        };
+
+        vm.attrToggled = function(val, label) {
+            vm.filters.attributes = vm.filters.attributes || [];
+            const attr = vm.mealAttrs.find((_attr)=> {
+                return _attr.label === label;
+            });
+
+            if(val) {
+                vm.filters.attributes.push(attr._id);
+            } else {
+                vm.filters.attributes.splice(
+                    vm.filters.attributes.indexOf(attr._id), 1);
+            }
+            vm.filterChanged();
+        };
+
         vm.showDetails = function() {
             $('#detailsModal').modal('show');
         };
