@@ -3,6 +3,10 @@
 const express = require('express');
 const route = express.Router();
 
+const multer  = require('multer');
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
 const Product = require('./produt.model');
 
 route.get('/', function(req, res) {
@@ -27,8 +31,12 @@ route.get('/', function(req, res) {
         });
 });
 
-route.post('/', (req, res)=> {
+route.post('/', upload.single('image'), (req, res)=> {
     const product = req.body;
+
+    if(req.file) {
+        product.image = req.file.buffer;
+    }
     Product.create(product)
         .then((result)=> {
             res.status(201).end();

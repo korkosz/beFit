@@ -76,8 +76,7 @@ module.exports = {
 
         vm.upload = function(file) {
             if(file && !file.$error) {
-                //zachowaj jako blob
-                debugger;
+                vm.newProduct.image = file;
             }
         };
     }
