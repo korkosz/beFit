@@ -18,7 +18,7 @@ module.exports = {
         };
 
         vm.categoryChanged = function() {
-            vm.subcategory = null;
+            vm.newProduct.subcategory = null;
         };
 
         vm.attrToggled = function(val, label) {
