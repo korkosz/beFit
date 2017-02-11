@@ -3,12 +3,34 @@
     <div class="modal__steps">Krok 2 z 3</div>
 </header>
 <form name="secondTabForm">
+
+    <!--Cooking times-->
+    <div class="l-flex-row small-gutter">
+        Czas wykonania posiłku:
+    </div>
+    <div class="l-flex-row small-gutter">
+        <div class="meals__time-container">
+            <div class=" l-flex-row small-gutter">
+                <ct-pill-group pills="$ctrl.cookingTimes"></ct-pill-group>
+            </div>
+        </div>
+    </div>
+
+    <!--Attributes-->
+    <div class="l-flex-row small-gutter">
+        Atrybuty:
+    </div>
     <div class="l-flex-row small-gutter">
 
+        <div class="col-md-6" ng-repeat="attr in $ctrl.mealAttrs">
+            <ct-checkbox label="{{attr.label}}"
+                         on-change="$ctrl.attrToggled(val, label)"
+                         group="newProduct"
+                         class="ct-checkbox__container">
+            </ct-checkbox>
+        </div>
     </div>
-    <div class="l-flex-row small-gutter">
-        
-    </div>
+
     <div class="ct-btn__wrapper l-flex-row center">
         <button type="submit"
                 ng-click="$ctrl.prevTab()"

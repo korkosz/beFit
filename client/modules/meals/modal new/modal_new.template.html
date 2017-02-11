@@ -1,16 +1,13 @@
-<!--html dla tabow jest w folderze tabs obczaj ze trzeci tab to new meal inline komponent-->
-<!--scssy sa juz importowane w new_meal_modal.style.scss-->
-
 <section id="firstTab"
-         ng-hide="$ctrl.activeTab !== 'FIRST'"
+         ng-hide="$ctrl.activeTabIdx !== 0"
          ng-include="'/modules/meals/modal new/tabs/first_tab.html'"></section>
 
 <section id="secondTab"
-         ng-hide="$ctrl.activeTab !== 'SECOND'"
+         ng-hide="$ctrl.activeTabIdx !== 1"
          ng-include="'/modules/meals/modal new/tabs/second_tab.html'"></section>
 
 <section id="thirdTab"
-         ng-hide="$ctrl.activeTab !== 'THIRD'">
+         ng-hide="$ctrl.activeTabIdx !== 2">
     <!--obczaj ze tu korzystamy z tego samego komponentu co na home jak dodajesz posilek inline poprzez ten button + -->
     <meal-inline-new></meal-inline-new>
 

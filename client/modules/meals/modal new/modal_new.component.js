@@ -1,14 +1,31 @@
 module.exports = {
     templateUrl: '/modules/meals/modal new/modal_new.template.html',
-    controller() {
-        let vm = this;
-
-        const tabs = ['FIRST', 'SECOND', 'THIRD'];
-        let activeTabIdx;
+    controller(metadataFactory) {
+        const vm = this;
 
         vm.$onInit = function () {
-            activeTabIdx = 0;
-            updateTab();
+            vm.activeTabIdx = 1;
+
+            vm.mealTypes = metadataFactory.get('mealTypes');
+            vm.mealAttrs = metadataFactory.get('mealAttrs');
+            vm.cookingTimes = metadataFactory.get('cookingTimes').map((time)=> {
+                return time.label;
+            });
+        };
+
+        vm.attrToggled = function(val, label) {
+            vm.newMeal.attributes = vm.newMeal.attributes || [];
+
+            const attr = vm.mealAttrs.find((_attr)=> {
+                return _attr.label === label;
+            });
+
+            if(val) {
+                vm.newMeal.attributes.push(attr._id);
+            } else {
+                vm.newMeal.attributes.splice(
+                    vm.newMeal.attributes.indexOf(attr._id), 1);
+            }
         };
 
         vm.save = function () {
@@ -16,22 +33,16 @@ module.exports = {
             $('#newMealModal').modal('hide');
         };
 
-        vm.nextTab = function () {
-            if (activeTabIdx < tabs.length - 1) {
-                activeTabIdx++;
-                updateTab();
+        vm.nextTab = function() {
+            if(vm.activeTabIdx < 3) {
+                vm.activeTabIdx++;
             }
         };
 
-        vm.prevTab = function () {
-            if (activeTabIdx > 0) {
-                activeTabIdx--;
-                updateTab();
+        vm.prevTab = function() {
+            if(vm.activeTabIdx > 0) {
+                vm.activeTabIdx--;
             }
         };
-
-        function updateTab() {
-            vm.activeTab = tabs[activeTabIdx];
-        }
     }
 };
