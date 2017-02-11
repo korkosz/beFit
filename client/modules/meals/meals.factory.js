@@ -1,12 +1,12 @@
 module.exports = function($http, metadataFactory) {
-    const getMeals = function() {
-        return $http.get('/api/meals')
-            .then(({data})=> {
-                return populateType(populateAttrs(data));
-            })
-            .catch((err)=> {
-                console.error((err));
-            });
+    const getMeals = function(params) {
+        return $http.get('/api/meals', {
+            params
+        }).then(({data})=> {
+            return formatImages(populateAttrs(populateType(data)));
+        }).catch((err)=> {
+            console.error(err)
+        });
     };
 
     return {
@@ -41,5 +41,40 @@ module.exports = function($http, metadataFactory) {
             meal.type = type && type.label;
         }
         return meals;
+    }
+
+    function formatImages(products) {
+        return products.map((prod)=> {
+            if(prod.image) {
+                prod.image = URL.createObjectURL(b64toBlob(prod.image, 'image/jpeg'));
+            } else {
+                prod.image = 'assets/images/noImage.jpg';
+            }
+            return prod;
+        });
+    }
+
+    function b64toBlob(b64Data, contentType, sliceSize) {
+        contentType = contentType || '';
+        sliceSize = sliceSize || 512;
+
+        var byteCharacters = atob(b64Data);
+        var byteArrays = [];
+
+        for(var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+            var byteNumbers = new Array(slice.length);
+            for(var i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            var byteArray = new Uint8Array(byteNumbers);
+
+            byteArrays.push(byteArray);
+        }
+
+        var blob = new Blob(byteArrays, {type: contentType});
+        return blob;
     }
 };

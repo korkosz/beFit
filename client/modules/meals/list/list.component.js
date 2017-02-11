@@ -23,13 +23,12 @@ module.exports = {
             const filters = {
                 name: vm.filters.name && vm.filters.name.length ? vm.filters.name : null,
                 type: vm.filters.type && vm.filters.type._id,
-                own: vm.filters.ownOrAll === 'OWN',
                 attributes: vm.filters.attributes
             };
 
-            // productsFactory.getProducts(filters).then((result)=> {
-            //     vm.products = result;
-            // });
+            mealsFactory.getMeals(filters).then((result)=> {
+                vm.meals = result;
+            });
         };
 
         vm.attrToggled = function(val, label) {

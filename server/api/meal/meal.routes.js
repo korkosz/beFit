@@ -5,11 +5,19 @@ const router = express.Router();
 const Meal = require('./meal.model.js');
 
 router.get('/', function(req, res) {
-    Meal.find({}).lean()
-        .then((result)=> {
+    const filters = req.query || {};
+
+    if(filters.name) {
+        filters.name = new RegExp(`${filters.name}`, 'i');
+    }
+    if(filters.attributes) {
+        filters.attributes = {$all: filters.attributes};
+    }
+    Meal.find(filters).lean()
+        .then(result => {
             res.json(result);
         })
-        .catch((err)=> {
+        .catch(err => {
             res.status(500).send(err);
         });
 });
