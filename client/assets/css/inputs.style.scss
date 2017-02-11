@@ -4,19 +4,6 @@
     flex: 1 0 0;
     min-width: 0;
     margin: $small-gutter;
-
-    .input__field{
-        background: #f4f4f4;
-
-        &.lighter{
-            background: #fafafa;
-        }
-
-        &.higher{
-            padding-top: 1em;
-            padding-bottom: 1em;
-        }
-    }
 }
 
 .input__field {
@@ -30,9 +17,29 @@
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: 0.25s;
 
     &.checked {
         outline: 2px solid #e8fffd;
+    }
+
+    &.ng-touched.ng-not-empty {
+        background: #119fe1;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    &.lighter{
+        background: #fafafa;
+    }
+
+    &.higher{
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    &.small{
+        font-size: 0.8rem;
     }
 }
 
@@ -52,5 +59,12 @@ input {
     left: -0.7rem;
     top: 0.3rem;
     font-size: 1.2rem;
-    color: #e83636;
+    color: #f29700;
+}
+
+.input__label{
+    font-size: 0.7rem;
+    color: #bbb;
+    margin-bottom: 0.35em;
+    font-weight: 400;
 }

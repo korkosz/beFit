@@ -1,22 +1,20 @@
-<div>
-    <div ng-class="{'checked': $ctrl.selectedOption}"
-         class="select__field" type="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">
+<div ng-class="{'checked': $ctrl.selectedOption}"
+     class="select__field" type="button" data-toggle="dropdown"
+     aria-haspopup="true" aria-expanded="false">
 
-        {{$ctrl.selectedOption.label || $ctrl.selectedOption || $ctrl.title}}
+    {{$ctrl.selectedOption.label || $ctrl.selectedOption || $ctrl.title}}
 
-        <span ng-if="!$ctrl.selectedOption"
-              class="select__arrow">⇕</span>
-        <span ng-if="$ctrl.selectedOption"
-              ng-click="$ctrl.clearOption();"
-              class="select__clear">x</span>
-    </div>
-    <ul ng-if="$ctrl.options.length>0"
-        class="select__menu dropdown-menu">
-        <li ng-repeat="option in $ctrl.options"
-            ng-click="$ctrl.selectOption(option);"
-            class="select__menu-item">
-            <a>{{option.label || option}}</a>
-        </li>
-    </ul>
+    <span ng-if="!$ctrl.selectedOption"
+          class="select__arrow">⇕</span>
+    <span ng-if="$ctrl.selectedOption"
+          ng-click="$ctrl.clearOption();"
+          class="select__clear">x</span>
 </div>
+<ul ng-if="$ctrl.options.length>0"
+    class="select__menu dropdown-menu">
+    <li ng-repeat="option in $ctrl.options"
+        ng-click="$ctrl.selectOption(option);"
+        class="select__menu-item">
+        <a>{{option.label || option}}</a>
+    </li>
+</ul>
