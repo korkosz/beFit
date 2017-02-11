@@ -1,0 +1,49 @@
+<div class="l-flex-row meals__list-row">
+    <!-- Image -->
+    <div class="meals__img-wrapper">
+        <img src="/assets/images/platki.jpg" alt="Produkt"
+             class="meals__img" />
+    </div>
+
+    <div class="meals__list-desc">
+
+        <div class="l-flex-row">
+            <!-- Name -->
+            <div class="meals__meal-name">
+                {{$ctrl.item.name}}
+            </div>
+
+            <!-- Time -->
+            <div class="meals__meal-time">
+                <span class="glyphicon glyphicon-time"></span>{{$ctrl.item.time}} min
+            </div>
+        </div>
+
+        <!-- Type -->
+        <div class="meals__meal-type">
+            {{$ctrl.item.type}}
+        </div>
+
+        <!-- Calories -->
+        <div class="meals__meal-calories">
+            {{$ctrl.item.calories}} kcal
+        </div>
+
+        <!-- Atributes -->
+        <div class="products__list-atributes">
+            <p ng-repeat="attr in $ctrl.item.attributes"
+               class="products__list-atributes-item">
+                {{attr}}
+            </p>
+        </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="meals__meal-buttons">
+        <button class="ct-btn__trash glyphicon glyphicon-trash"></button>
+        <button ng-click="$ctrl.showDetails()"
+                class="ct-btn ct-btn__secondary smaller">Szczegoly
+        </button>
+
+    </div>
+</div>
