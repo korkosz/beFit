@@ -45,9 +45,9 @@ module.exports = function($http, metadataFactory, Upload) {
     function formatImages(products) {
         return products.map((prod)=> {
             if(prod.image) {
-                prod.image = URL.createObjectURL(b64toBlob(prod.image, 'image/jpeg'));
+                prod.image = URL.createObjectURL(b64toBlob(prod.image, 'image/png'));
             } else {
-                prod.image = 'assets/images/noImage.jpg';
+                prod.image = 'assets/images/noImage.png';
             }
             return prod;
         });

@@ -7,8 +7,9 @@
         <!--Name-->
         <div class="input__container small-gutter">
             <input required="required" placeholder="Nazwa produktu"
-                   ng-model="$ctrl.newProduct.name" class="input__field higher">
+                   ng-model="$ctrl.newProduct.name" class="input__field">
         </div>
+        <span class="input__required">*</span>
     </div>
     <div class="l-flex-row small-gutter">
         <!--Category-->
@@ -22,16 +23,18 @@
                    title="Podkategoria"
                    ng-model="$ctrl.newProduct.subcategory"
                    options="$ctrl.newProduct.category.subtypes"></ct-select>
-    </div>
-    <div class="ct-btn__wrapper l-flex-row">
-    <button type="submit"
-            ng-disabled="firstTabForm.$invalid"
-            ng-click="$ctrl.nextTab()"
-            class="ct-btn ct-btn__primary right">Dalej
-    </button>
+        <span class="input__required">*</span>
     </div>
 
-    <div>
-        * wymagane
+    <div class="ct-btn__wrapper l-flex-row center">
+        <button type="submit"
+                ng-disabled="firstTabForm.$invalid"
+                ng-click="$ctrl.nextTab()"
+                class="ct-btn ct-btn__primary bigger">Dalej
+        </button>
+    </div>
+
+    <div class="modal__aditional-info">
+        <p><span class="required">*</span>wymagane</p>
     </div>
 </form>

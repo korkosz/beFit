@@ -1,43 +1,63 @@
 <header>
-    <div>Nowy Product</div>
-    <div>Krok 3 z 4</div>
+    <div class="modal__header">Nowy Produkt</div>
+    <div class="modal__steps">Krok 3 z 4</div>
 </header>
-<section>
-    <form name="thirdTabForm">
-        <div class="row">
-            <div class="col-md-3 col-md-offset-1">
-                <label>Białko *</label>
-                <input required="required" type="number"
-                       ng-model="$ctrl.newProduct.proteins" class="form-control">
-            </div>
-            <div class="col-md-3">
-                <label>Węglowodany *</label>
-                <input required="required" type="number"
-                       ng-model="$ctrl.newProduct.carbs" class="form-control">
-            </div>
-            <div class="col-md-3">
-                <label>Tłuszcze *</label>
-                <input required="required" type="number"
-                       ng-model="$ctrl.newProduct.fats" class="form-control">
-            </div>
+<form name="thirdTabForm">
+    <div class="l-flex-row small-gutter products__thirdtab-calories">
+        <div class="input__container">
+            <label class="input__label">
+                Białko
+                <span class="input__required">*</span>
+            </label>
+            <input required="required" type="number"
+                   ng-model="$ctrl.newProduct.proteins"
+                   placeholder="g/100g"
+                   class="input__field small">
         </div>
-
-        <div class="col-md-6" ng-repeat="attr in $ctrl.productAttrs">
-            <ct-checkbox label="{{attr.label}}"
-                         on-change="$ctrl.attrToggled(val, label)"
-                         group="newProduct"
-                         class="ct-checkbox__container">
-            </ct-checkbox>
+        <div class="input__container">
+            <label class="input__label">
+                Węglowodany
+                <span class="input__required">*</span>
+            </label>
+            <input required="required" type="number"
+                   ng-model="$ctrl.newProduct.carbs"
+                   placeholder="g/100g"
+                   class="input__field small">
         </div>
+        <div class="input__container">
+            <label class="input__label">
+                Tłuszcze
+                <span class="input__required">*</span>
+            </label>
+            <input required="required" type="number"
+                   ng-model="$ctrl.newProduct.fats"
+                   placeholder="g/100g"
+                   class="input__field small">
+        </div>
+    </div>
 
-    </form>
-</section>
-<button ng-click="$ctrl.prevTab()"
-        class="btn btn-default">
-    Wroc
-</button>
-<button ng-disabled="thirdTabForm.$invalid"
-        ng-click="$ctrl.nextTab()"
-        class="btn btn-default">
-    Dalej
-</button>
+    <div class="l-flex-row">
+        <ct-checkbox label="{{attr.label}}"
+                     on-change="$ctrl.attrToggled(val, label)"
+                     group="newProduct"
+                      ng-repeat="attr in $ctrl.productAttrs"
+                     class="ct-checkbox__container">
+        </ct-checkbox>
+    </div>
+
+    <div class="ct-btn__wrapper l-flex-row center">
+        <button type="submit"
+                ng-click="$ctrl.prevTab()"
+                class="ct-btn ct-btn__secondary bigger">Wróć
+        </button>
+        <button type="submit"
+                ng-disabled="thirdTabForm.$invalid"
+                ng-click="$ctrl.nextTab()"
+                class="ct-btn ct-btn__primary bigger">Dalej
+        </button>
+    </div>
+
+    <div class="modal__aditional-info">
+        <p><span class="required">*</span>wymagane</p>
+    </div>
+</form>

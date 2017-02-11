@@ -9,7 +9,7 @@ module.exports = {
         const vm = this;
 
         vm.$onInit = function() {
-            vm.activeTabIdx = 0;
+            vm.activeTabIdx = 2;
 
             vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');

@@ -1,23 +1,31 @@
 <header>
-    <div>Nowy Product</div>
-    <div>Krok 2 z 4</div>
+    <div class="modal__header">Nowy Produkt</div>
+    <div class="modal__steps">Krok 2 z 4</div>
 </header>
 <section>
     <div ngf-drop ngf-select ng-model="$ctrl.file" class="drop-box"
          ngf-drag-over-class="'dragover'" accept="image/*"
          ngf-pattern="'image/*'">
+         Dodaj zdjęcie produktu
     </div>
     <div ngf-no-file-drop>
         File Drag/Drop is not supported for this browser
     </div>
 
-    <div>Dodanie zdjęcia jest opcjonalne</div>
+    <div class="modal__aditional-info">
+        <p>dodanie zdjęcia jest opcjonalne</p>
+    </div>
 </section>
-<button ng-click="$ctrl.prevTab()"
-        class="btn btn-default">
-    Wroc
-</button>
-<button ng-click="$ctrl.nextTab()"
-        class="btn btn-default">
-    Dalej
-</button>
+
+<div class="ct-btn__wrapper l-flex-row center">
+    <button type="submit"
+            ng-disabled="firstTabForm.$invalid"
+            ng-click="$ctrl.prevTab()"
+            class="ct-btn ct-btn__secondary bigger">Wróć
+    </button>
+    <button type="submit"
+            ng-disabled="firstTabForm.$invalid"
+            ng-click="$ctrl.nextTab()"
+            class="ct-btn ct-btn__primary bigger">Dalej
+    </button>
+</div>
