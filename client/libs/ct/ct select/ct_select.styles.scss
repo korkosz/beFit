@@ -1,43 +1,53 @@
 .select__container{
-  position: relative;
-  display: inline-block;
-  flex: 1 0 0;
-  min-width: 0;
-  margin: $small-gutter;
+    position: relative;
+    display: inline-block;
+    flex: 1 0 0;
+    min-width: 0;
+    margin: $small-gutter;
 }
 
 .select__field{
-  position: relative;
-  padding: 0.8em 0.9rem;
-  background: #f4f4f4;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  transition: 0.25s;
+    position: relative;
+    padding: 1em 0.9rem;
+    background: #f4f4f4;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: 0.25s;
 
-  &.checked {
-    background: #119fe1;
-    color: #fff;
-  }
+    &.checked {
+        background: #119fe1;
+        color: #fff;
+        font-weight: bold;
+    }
 }
 
 .select__field {
-  padding-right: 3em;
-  cursor: pointer;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    padding-right: 3em;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .select__arrow,
 .select__clear {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 3em;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-dropdown{
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-toggle{
+    cursor: pointer;
 }

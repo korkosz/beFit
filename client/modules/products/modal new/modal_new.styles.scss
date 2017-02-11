@@ -48,9 +48,14 @@
     margin-top: 0.7em;
     position: relative;
 
+    &.fourthTab{
+        margin-bottom: 1rem;
+    }
+
     p{
         display: inline-block;
         position: relative;
+        color: #f29700;
     }
 
     .required{

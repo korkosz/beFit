@@ -1,26 +1,70 @@
 <header>
-    <div>Nowy Product</div>
-    <div>Krok 4 z 4</div>
+    <div class="modal__header">Nowy Produkt</div>
+    <div class="modal__steps">Krok 4 z 4</div>
 </header>
 <section>
     <form name="fourthTabForm">
-        <div>Wprowadzone ceny będą miały charakter wyłącznie orientacyjny</div>
-        <!--Zostawiam narazie jedna cene bo tak jak gadalismy to trzeba przemyslec-->
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <label>Cena za szt.</label>
-                <input required="required" type="number"
-                       ng-model="$ctrl.newProduct.price" class="form-control">
+        <div class="modal__aditional-info fourthTab">
+            <p>Wprowadzone ceny będą miały charakter wyłącznie orientacyjny</p>
+        </div>
+
+        <div class="products__fourthtab-box">
+            <!--Zostawiam narazie jedna cene bo tak jak gadalismy to trzeba przemyslec-->
+            <div class="l-flex-row small-gutter">
+                <div class="input__container small-gutter">
+                    <label class="input__label">
+                        Cena (PLN) za
+
+                        <!-- Wpierdolilem tu zwyklego bootstrapowego dropdowna
+                        zdecyduj czy dasz go jako ct-select czy inaczej
+                        ostyluje go jak juz go ojebiesz:D -->
+                        <div class="inline-dropdown">
+                            <span class="dropdown-toggle" type="button"
+                                    id="dropdownMenu2"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="true">
+                                    szt <span class="caret"></span>
+                            </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li><a href="#">szt</a></li>
+                                <li><a href="#">100g</a></li>
+                                <li><a href="#">100ml</a></li>
+                            </ul>
+                        </div>
+                    </label>
+
+
+                    <input required="required" type="number"
+                           ng-model="$ctrl.newProduct.price"
+                           placeholder="..."
+                           class="input__field">
+                </div>
+            </div>
+
+            <!-- Tak sobie mysle ze jak ktos podaje cene sztuki produktu
+            to moze mu wyskoczyc ten input (na frisco zawsze jest podana waga netto) -->
+            <div class="l-flex-row small-gutter">
+                <div class="input__container small-gutter">
+                    <label class="input__label">
+                        Waga (g) netto jednej sztuki
+                    </label>
+
+                    <input required="required" type="number"
+                            placeholder="..."
+                            class="input__field">
+                </div>
             </div>
         </div>
     </form>
 </section>
-<button ng-click="$ctrl.prevTab()"
-        class="btn btn-default">
-    Wroc
-</button>
-<button ng-disabled="fourthTabForm.$invalid"
-        ng-click="$ctrl.nextTab()"
-        class="btn btn-default">
-    Zapisz
-</button>
+
+<div class="ct-btn__wrapper l-flex-row center">
+    <button ng-click="$ctrl.prevTab()"
+            class="ct-btn ct-btn__secondary bigger">Wróć
+    </button>
+    <button ng-disabled="fourthTabForm.$invalid"
+            ng-click="$ctrl.nextTab()"
+            class="ct-btn ct-btn__primary bigger">Zapisz
+    </button>
+</div>
