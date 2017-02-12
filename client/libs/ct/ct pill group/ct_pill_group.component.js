@@ -14,9 +14,9 @@ module.exports = {
 
         vm.setActivePill = function(pill) {
             if(vm.multiple) {
-                togglePillWhenMultiple(pill);
+                togglePillWhenMultiple(pill._id || pill);
             } else {
-                togglePillWhenSingle(pill);
+                togglePillWhenSingle(pill._id || pill);
             }
             if(angular.isFunction(vm.onChange)) {
                 vm.onChange({activePills: vm.activePills});
@@ -25,9 +25,10 @@ module.exports = {
 
         vm.isPillChecked = function(pill) {
             if(vm.multiple) {
-                return vm.activePills.includes(pill);
+                return vm.activePills.includes(pill._id || pill);
             } else {
-                return vm.activePills === pill;
+                return vm.activePills === pill._id ||
+                    vm.activePills === pill;
             }
         };
 

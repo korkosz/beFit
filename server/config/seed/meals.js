@@ -7,7 +7,9 @@ const fakeNames = ['Owsianka', 'Ryż+kurczak', 'Jajo sadzone',
     'Owsianka v2', 'Kurczak po chinsku', 'Shake', 'Omlet', 'Kromka ze smalcem',
     'Pulpety', 'Placki ziemniaczane', 'Spaghetti carbonara'];
 
-const times = [5, 10, 15, 30, 45, 60, 90];
+const times = ['588f2cca567a9d102cc610ce', '588f2cca567a9d102cc610cd',
+    '588f2cca567a9d102cc610cc', '588f2cca567a9d102cc610cb', '588f2cca567a9d102cc610ca',
+    '588f2cca567a9d102cc610c9', '588f2cca567a9d102cc610c8'];
 
 Picklist.find({name: 'mealTypes'}).lean()
     .then((res)=> {

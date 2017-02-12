@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
         required: true
     },
     time: {
-        type: Number
+        type: mongoose.Schema.Types.ObjectId,
     },
     calories: {
         type: Number,

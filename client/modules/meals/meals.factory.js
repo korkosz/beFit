@@ -3,7 +3,7 @@ module.exports = function($http, metadataFactory) {
         return $http.get('/api/meals', {
             params
         }).then(({data})=> {
-            return formatImages(populateAttrs(populateType(data)));
+            return populateTime(formatImages(populateAttrs(populateType(data))));
         }).catch((err)=> {
             console.error(err)
         });
@@ -39,6 +39,18 @@ module.exports = function($http, metadataFactory) {
                 return attr._id === meal.type;
             });
             meal.type = type && type.label;
+        }
+        return meals;
+    }
+
+    function populateTime(meals) {
+        const meta = metadataFactory.get('cookingTimes');
+
+        for(let meal of meals) {
+            let time = meta.find((_time)=> {
+                return _time._id === meal.time;
+            });
+            meal.time = time && time.label;
         }
         return meals;
     }

@@ -8,9 +8,7 @@ module.exports = {
 
             vm.mealTypes = metadataFactory.get('mealTypes');
             vm.mealAttrs = metadataFactory.get('mealAttrs');
-            vm.cookingTimes = metadataFactory.get('cookingTimes').map((time)=> {
-                return time.label;
-            });
+            vm.cookingTimes = metadataFactory.get('cookingTimes');
         };
 
         vm.attrToggled = function(val, label) {
