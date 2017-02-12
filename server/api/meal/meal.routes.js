@@ -13,6 +13,11 @@ router.get('/', function(req, res) {
     if(filters.attributes) {
         filters.attributes = {$all: filters.attributes};
     }
+    if(filters.time) {
+        filters.time = {
+            $in: filters.time
+        };
+    }
     Meal.find(filters).lean()
         .then(result => {
             res.json(result);

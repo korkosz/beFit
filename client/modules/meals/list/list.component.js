@@ -7,11 +7,10 @@ module.exports = {
 
         vm.$onInit = function() {
             vm.mealAttrs = metadataFactory.get('mealAttrs');
-
             vm.mealTypes = metadataFactory.get('mealTypes');
-            vm.cookingTimes = metadataFactory.get('cookingTimes').map((time)=> {
-                return time.label;
-            });
+            vm.cookingTimes = metadataFactory.get('cookingTimes');
+
+            vm.filters = {};
 
             mealsFactory.getMeals()
                 .then((meals)=> {
