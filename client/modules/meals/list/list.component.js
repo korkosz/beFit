@@ -19,11 +19,17 @@ module.exports = {
                 });
         };
 
+        vm.timeChanged = function(activePills) {
+            vm.filters.time = activePills;
+            vm.filterChanged();
+        };
+
         vm.filterChanged = function() {
             const filters = {
                 name: vm.filters.name && vm.filters.name.length ? vm.filters.name : null,
                 type: vm.filters.type && vm.filters.type._id,
-                attributes: vm.filters.attributes
+                attributes: vm.filters.attributes,
+                time: vm.filters.time
             };
 
             mealsFactory.getMeals(filters).then((result)=> {

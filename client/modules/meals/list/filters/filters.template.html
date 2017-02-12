@@ -49,6 +49,7 @@
         </div>
         <div class=" l-flex-row small-gutter">
             <ct-pill-group pills="$ctrl.cookingTimes"
+                           on-change="$ctrl.timeChanged(activePills)"
                            multiple="true"></ct-pill-group>
         </div>
     </div>

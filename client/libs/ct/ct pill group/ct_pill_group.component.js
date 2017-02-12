@@ -1,7 +1,8 @@
 module.exports = {
     bindings: {
         pills: '<',
-        multiple: '<'
+        multiple: '<',
+        onChange: '&'
     },
     templateUrl: '/libs/ct/ct pill group/ct_pill_group.template.html',
     controller() {
@@ -16,6 +17,9 @@ module.exports = {
                 togglePillWhenMultiple(pill);
             } else {
                 togglePillWhenSingle(pill);
+            }
+            if(angular.isFunction(vm.onChange)) {
+                vm.onChange({activePills: vm.activePills});
             }
         };
 
