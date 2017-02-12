@@ -1,13 +1,18 @@
-<div>Czy chcesz aby Twój produkt został zweryfikowany i dodany do ogólnej bazy?</div>
+<header>
+    <div class="modal__header">Czy chcesz aby Twój produkt został zweryfikowany i dodany do ogólnej bazy?</div>
+    <div class="modal__aditional-info">
+        <p>Zostanie on dodany do sekcji Moje produkty.<br>
+        Jeżeli zaznaczysz "Nie, dziękuję" produkt pozostanie prywatny</p>
+    </div>
+</header>
 
-<div>Zostanie on dodany do sekcji Moje produkty.</div>
-<div>Jeżeli zaznaczysz "Nie, dziękuję" produkt pozostanie prywatny</div>
-
-<button ng-click="$ctrl.save(true)"
-        class="btn btn-default">
-    Nie, dziękuję
-</button>
-<button ng-click="$ctrl.save(false)"
-        class="btn btn-default">
-    Tak
-</button>
+<div class="ct-btn__wrapper l-flex-row center">
+    <button ng-click="$ctrl.save(true)"
+            class="ct-btn ct-btn__secondary bigger">
+        Nie, dziękuję
+    </button>
+    <button ng-click="$ctrl.save(false)"
+            class="ct-btn ct-btn__primary bigger">
+        Tak
+    </button>
+</div>
