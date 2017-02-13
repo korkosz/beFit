@@ -10,6 +10,7 @@ module.exports = {
 
         vm.$onInit = function() {
             vm.activeTabIdx = 0;
+            vm.newProduct = {};
 
             vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');
@@ -78,6 +79,11 @@ module.exports = {
             if(file && !file.$error) {
                 vm.newProduct.image = file;
             }
+        };
+
+        vm.clearImageSelection = function() {
+            vm.newProduct.image = null;
+            vm.file = null;
         };
     }
 };

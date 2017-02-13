@@ -3,14 +3,26 @@
     <div class="modal__steps">Krok 2 z 4</div>
 </header>
 <section>
-    <div ngf-drop ngf-select ng-model="$ctrl.file" class="drop-box"
+    <!--Image drop zone - visible if no image dropped yet-->
+    <div ng-hide="$ctrl.file"
+         ngf-drop ngf-select ng-model="$ctrl.file" class="drop-box"
          ngf-drag-over-class="'dragover'" accept="image/*"
          ngf-pattern="'image/*'">
-         Dodaj zdjęcie produktu
+        Dodaj zdjęcie produktu
     </div>
-    <div ngf-no-file-drop>
-        File Drag/Drop is not supported for this browser
-    </div>
+
+    <!--Clear the selected image-->
+    <button ng-show="$ctrl.file"
+            ng-click="$ctrl.clearImageSelection()">X</button>
+
+    <!--Thumbnail of the dropped image-->
+    <img ng-show="$ctrl.file"
+         style="max-width: 300px;
+                max-height: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;"
+         ngf-thumbnail="$ctrl.file" />
 
     <div class="modal__aditional-info">
         <p>dodanie zdjęcia jest opcjonalne</p>
