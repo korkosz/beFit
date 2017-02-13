@@ -17,7 +17,7 @@
                             <span class="dropdown-toggle" type="button"
                                   id="dropdownMenu2" data-toggle="dropdown"
                                   aria-haspopup="true" aria-expanded="true">
-                                {{$ctrl.selectedPriceType.label}}
+                                {{$ctrl.newProduct.priceType.label}}
                                 <span class="caret"></span>
                             </span>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -34,14 +34,15 @@
                 </div>
             </div>
 
-            <div ng-show="$ctrl.selectedPriceType.label === 'szt';"
+            <div ng-show="$ctrl.newProduct.priceType.label === 'szt';"
                  class="l-flex-row small-gutter">
                 <div class="input__container small-gutter">
                     <label class="input__label">
                         Waga (g) netto jednej sztuki
                     </label>
 
-                    <input required="required" type="number"
+                    <input ng-model="$ctrl.newProduct.netWeight"
+                           required="required" type="number"
                            placeholder="..."
                            class="input__field">
                 </div>

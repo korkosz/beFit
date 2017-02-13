@@ -7,6 +7,7 @@ const schema = new mongoose.Schema({
     },
     price: Number,
     priceType: mongoose.Schema.Types.ObjectId,
+    netWeight: Number,
     priceUpdateDate: {
         type: Number,
         default() {

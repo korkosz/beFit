@@ -19,13 +19,13 @@ module.exports = {
             vm.priceTypes = metadataFactory.get('priceTypes');
 
             //set default price type
-            vm.selectedPriceType = vm.priceTypes.find((_priceType)=> {
+            vm.newProduct.priceType = vm.priceTypes.find((_priceType)=> {
                 return _priceType.label === 'szt';
             });
         };
 
         vm.selectPriceType = function(priceType) {
-            vm.selectedPriceType = priceType;
+            vm.newProduct.priceType = priceType;
         };
 
         vm.categoryChanged = function() {
