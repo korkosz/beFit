@@ -6,6 +6,15 @@
     flex: 0 0 9rem;
 }
 
+.meals__calories-input{
+    .input__field {
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+
 .meals__atributes{
     display: flex;
     flex-wrap: wrap;
