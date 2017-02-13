@@ -62,7 +62,7 @@
 <!--New Product modal-->
 <div ng-if="$ctrl.clearModal">
     <bootstrap-modal modal-id="newProductModal">
-        <product-modal-new modal-status="$ctrl.newProductModalStatus"></product-modal-new>
+        <product-modal-new done="$ctrl.done(result)"></product-modal-new>
     </bootstrap-modal>
 </div>
 

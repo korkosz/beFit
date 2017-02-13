@@ -2,7 +2,7 @@
 
 module.exports = {
     bindings: {
-        modalStatus: '='
+        done: '&'
     },
     templateUrl: '/modules/products/modal new/modal_new.template.html',
     controller(metadataFactory, productsFactory, auth, $timeout, $scope) {
@@ -12,10 +12,10 @@ module.exports = {
             vm.activeTabIdx = 0;
             vm.newProduct = {};
 
+            vm.done = vm.done || angular.noop;
+
             vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');
-
-            vm.modalStatus = 0;
         };
 
         vm.categoryChanged = function() {
@@ -47,13 +47,10 @@ module.exports = {
 
             productsFactory.saveNewProduct(vm.newProduct)
                 .then(()=> {
-                    vm.modalStatus = 201;
-                    $timeout(()=> {
-                        $('#newProductModal').modal('hide');
-                    }, 0);
+                    vm.done({result: 'created'});
                 })
                 .catch(()=> {
-                    vm.modalStatus = 400;
+                    vm.done({result: 'error'});
                 });
         };
 

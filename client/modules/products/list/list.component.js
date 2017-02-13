@@ -59,24 +59,21 @@ module.exports = {
             vm.filterChanged();
         };
 
-        vm.openNewProductModal = function() {
-            $('#newProductModal').modal('show');
-
-            $('#newProductModal').on('hide.bs.modal', function() {
-                if(vm.newProductModalStatus === 201) {
+        vm.done = function(result) {
+            if(result === 'created') {
+                $('#newProductModal').modal('hide').on('hidden.bs.modal', function() {
                     productsFactory.getProducts().then((result)=> {
                         vm.products = result;
                     });
-                }
-            });
+                });
+            }
+        };
 
-            $('#newProductModal').on('hidden.bs.modal', function() {
-                clearModal();
-            });
-
-            $('#newProductModal').on('show.bs.modal', function() {
-                vm.newProductModalStatus = null;
-            });
+        vm.openNewProductModal = function() {
+            $('#newProductModal').modal('show')
+                .on('hidden.bs.modal', function() {
+                    clearModal();
+                });
         };
 
         function clearModal() {
