@@ -7,12 +7,6 @@
          ng-include="'/modules/meals/modal new/tabs/second_tab.html'"></section>
 
 <section id="thirdTab"
-         ng-hide="$ctrl.activeTabIdx !== 2">
-    <!--obczaj ze tu korzystamy z tego samego komponentu co na home jak dodajesz posilek inline poprzez ten button + -->
-    <meal-inline-new></meal-inline-new>
+         ng-hide="$ctrl.activeTabIdx !== 2"
+         ng-include="'/modules/meals/modal new/tabs/third_tab.html'"></section>
 
-    <div>
-        <button ng-click="$ctrl.prevTab()">Wroc</button>
-        <button ng-click="$ctrl.save()">Zapisz</button>
-    </div>
-</section>
