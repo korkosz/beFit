@@ -5,11 +5,19 @@ module.exports = function($http, metadataFactory) {
         }).then(({data})=> {
             return populateTime(formatImages(populateAttrs(populateType(data))));
         }).catch((err)=> {
-            console.error(err)
+            console.error(err);
         });
     };
 
+    const deleteMeal = function(id) {
+        return $http.delete(`/api/meals/${id}`)
+            .catch((err)=> {
+                console.error(err);
+            });
+    };
+
     return {
+        deleteMeal,
         getMeals
     };
 

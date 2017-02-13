@@ -1,8 +1,9 @@
 <header class="module-header no-margin">Posilki</header>
 
 <div class="meals_list-header">
-        <button ng-click="$ctrl.showNewMealModal()"
-                class="ct-btn ct-btn__secondary right">Dodaj posiłek</button>
+    <button ng-click="$ctrl.showNewMealModal()"
+            class="ct-btn ct-btn__secondary right">Dodaj posiłek
+    </button>
 </div>
 
 <div class="meals__list-container">
@@ -14,7 +15,8 @@
     <!-- Meals list -->
     <div class="meals__meals-list">
         <div ng-repeat="meal in $ctrl.meals">
-            <meal-list-item item="meal"></meal-list-item>
+            <meal-list-item item="meal"
+                            refresh-list="$ctrl.getMeals()"></meal-list-item>
         </div>
     </div>
 </div>
@@ -28,3 +30,4 @@
 <bootstrap-modal modal-id="newMealModal">
     <meal-modal-new></meal-modal-new>
 </bootstrap-modal>
+

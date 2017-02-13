@@ -4,5 +4,6 @@ module.exports = angular.module('beFit.meals', [])
     .component('mealInlineNew', require('./inline new/inline_new.component'))
     .component('mealDetails', require('./details/details.component'))
     .component('mealList', require('./list/list.component'))
+    .component('mealModalDelete', require('./list/modal delete/modal_delete.component'))
     .component('mealListItem', require('./list/list item/list_item.component'))
     .component('mealPickLList', require('./pick list/pick_list.component'));

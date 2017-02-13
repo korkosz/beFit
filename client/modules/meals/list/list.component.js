@@ -12,10 +12,7 @@ module.exports = {
 
             vm.filters = {};
 
-            mealsFactory.getMeals()
-                .then((meals)=> {
-                    vm.meals = meals;
-                });
+            vm.getMeals();
         };
 
         vm.timeChanged = function(activePills) {
@@ -28,12 +25,12 @@ module.exports = {
                 name: vm.filters.name && vm.filters.name.length ? vm.filters.name : null,
                 type: vm.filters.type && vm.filters.type._id,
                 attributes: vm.filters.attributes,
-                time: vm.filters.time
+                time: vm.filters.time,
+                caloriesFrom: vm.filters.caloriesFrom,
+                caloriesTo: vm.filters.caloriesTo
             };
 
-            mealsFactory.getMeals(filters).then((result)=> {
-                vm.meals = result;
-            });
+            vm.getMeals(filters);
         };
 
         vm.attrToggled = function(val, label) {
@@ -57,10 +54,17 @@ module.exports = {
 
         vm.closeDetails = function() {
             $('#detailsModal').modal('hide');
-        }
+        };
 
         vm.showNewMealModal = function() {
             $('#newMealModal').modal('show');
+        };
+
+        vm.getMeals = function(filters) {
+            mealsFactory.getMeals(filters)
+                .then((meals)=> {
+                    vm.meals = meals;
+                });
         };
     }
 };

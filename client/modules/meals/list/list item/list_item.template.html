@@ -40,10 +40,17 @@
 
     <!-- Buttons -->
     <div class="meals__meal-buttons">
-        <button class="ct-btn__trash glyphicon glyphicon-trash"></button>
+        <button class="ct-btn__trash glyphicon glyphicon-trash"
+                ng-click="$ctrl.showDeleteModal()"></button>
         <button ng-click="$ctrl.showDetails()"
                 class="ct-btn ct-btn__secondary smaller">Szczegoly
         </button>
 
     </div>
 </div>
+
+<!--Delete Meal Modal-->
+<bootstrap-modal modal-id="deleteMealModal">
+    <meal-modal-delete meal-id="{{$ctrl.item._id}}"
+                       done="$ctrl.done(result)"></meal-modal-delete>
+</bootstrap-modal>
