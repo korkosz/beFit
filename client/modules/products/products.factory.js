@@ -6,7 +6,7 @@ module.exports = function($http, metadataFactory, Upload) {
         return $http.get('/api/products', {
             params
         }).then(({data})=> {
-            return formatImages(populateAttrs(data));
+            return populatePriceTypes(formatImages(populateAttrs(data)));
         }).catch((err)=> {
             console.error(err)
         });
@@ -38,6 +38,18 @@ module.exports = function($http, metadataFactory, Upload) {
                     return attribute && attribute.label;
                 });
             }
+        }
+        return products;
+    }
+
+    function populatePriceTypes(products) {
+        const meta = metadataFactory.get('priceTypes');
+
+        for(let product of products) {
+            let priceType = meta.find((_priceType)=> {
+                return _priceType._id === product.priceType;
+            });
+            product.priceType = priceType && priceType.label;
         }
         return products;
     }

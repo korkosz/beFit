@@ -16,6 +16,20 @@ module.exports = {
 
             vm.productAttrs = metadataFactory.get('productAttrs');
             vm.productCategs = metadataFactory.get('productCategories');
+            vm.priceTypes = metadataFactory.get('priceTypes');
+
+            //set default price type
+            vm.selectedPriceType = vm.priceTypes.find((_priceType)=> {
+                return _priceType.label === 'szt';
+            });
+
+            $scope.$watch(()=> vm.file, ()=> {
+                vm.upload(vm.file);
+            });
+        };
+
+        vm.selectPriceType = function(priceType) {
+            vm.selectedPriceType = priceType;
         };
 
         vm.categoryChanged = function() {
@@ -65,12 +79,6 @@ module.exports = {
                 vm.activeTabIdx--;
             }
         };
-
-        $scope.$watch(function() {
-            return vm.file;
-        }, function() {
-            vm.upload(vm.file);
-        });
 
         vm.upload = function(file) {
             if(file && !file.$error) {

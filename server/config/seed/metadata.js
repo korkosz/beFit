@@ -5,11 +5,30 @@ module.exports = new Promise(function(resolve) {
 
     Version.remove({}).then(()=> {
         Version.create({
-            version: 4
+            version: 5
         });
 
     });
     // Version.findOneAndUpdate({}, {version: 1}, {upsert: true});
+
+    const priceTypes = {
+        '_id': '58a1bc03c14e2617787def4b',
+        'name': 'priceTypes',
+        'values': [
+            {
+                'label': 'szt',
+                '_id': '58a1bc03c14e2617787def4e'
+            },
+            {
+                'label': '100g',
+                '_id': '58a1bc03c14e2617787def4d'
+            },
+            {
+                'label': '1kg',
+                '_id': '58a1bc03c14e2617787def4c'
+            }
+        ]
+    };
 
     const mealTypes = {
         '_id': '588f2cca567a9d102cc610c3',
@@ -17,18 +36,15 @@ module.exports = new Promise(function(resolve) {
         'values': [
             {
                 'label': 'Sniadanie',
-                '_id': '588f2cca567a9d102cc610c6',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610c6'
             },
             {
                 'label': 'Obiad',
-                '_id': '588f2cca567a9d102cc610c5',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610c5'
             },
             {
                 'label': 'Kolacja',
-                '_id': '588f2cca567a9d102cc610c4',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610c4'
             }
         ]
     };
@@ -39,38 +55,31 @@ module.exports = new Promise(function(resolve) {
         'values': [
             {
                 'label': '5min',
-                '_id': '588f2cca567a9d102cc610ce',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610ce'
             },
             {
                 'label': '10min',
-                '_id': '588f2cca567a9d102cc610cd',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610cd'
             },
             {
                 'label': '15min',
-                '_id': '588f2cca567a9d102cc610cc',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610cc'
             },
             {
                 'label': '30min',
-                '_id': '588f2cca567a9d102cc610cb',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610cb'
             },
             {
                 'label': '45min',
-                '_id': '588f2cca567a9d102cc610ca',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610ca'
             },
             {
                 'label': '1h',
-                '_id': '588f2cca567a9d102cc610c9',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610c9'
             },
             {
                 'label': '1.5h',
-                '_id': '588f2cca567a9d102cc610c8',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610c8'
             }
         ]
     };
@@ -81,43 +90,35 @@ module.exports = new Promise(function(resolve) {
         'values': [
             {
                 'label': 'Bezglutenowy',
-                '_id': '588f2cca567a9d102cc610d7',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d7'
             },
             {
                 'label': 'Diabetyczny',
-                '_id': '588f2cca567a9d102cc610d6',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d6'
             },
             {
                 'label': 'Wysokobiałkowy',
-                '_id': '588f2cca567a9d102cc610d5',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d5'
             },
             {
                 'label': 'Niskotłuszczowy',
-                '_id': '588f2cca567a9d102cc610d4',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d4'
             },
             {
                 'label': 'Bez cukru',
-                '_id': '588f2cca567a9d102cc610d3',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d3'
             },
             {
                 'label': 'Wegański',
-                '_id': '588f2cca567a9d102cc610d2',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d2'
             },
             {
                 'label': 'Tani',
-                '_id': '588f2cca567a9d102cc610d1',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d1'
             },
             {
                 'label': 'Ekologiczny',
-                '_id': '588f2cca567a9d102cc610d0',
-                'subtypes': []
+                '_id': '588f2cca567a9d102cc610d0'
             }
         ]
     };
@@ -215,50 +216,42 @@ module.exports = new Promise(function(resolve) {
         'values': [
             {
                 'label': 'Bezglutenowy',
-                '_id': '589383656bfd421fb0c2b6c8',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c8'
             },
             {
                 'label': 'Diabetyczny',
-                '_id': '589383656bfd421fb0c2b6c7',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c7'
             },
             {
                 'label': 'Wysokobiałkowy',
-                '_id': '589383656bfd421fb0c2b6c6',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c6'
             },
             {
                 'label': 'Niskotłuszczowy',
-                '_id': '589383656bfd421fb0c2b6c5',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c5'
             },
             {
                 'label': 'Bez cukru',
-                '_id': '589383656bfd421fb0c2b6c4',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c4'
             },
             {
                 'label': 'Wegański',
-                '_id': '589383656bfd421fb0c2b6c3',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c3'
             },
             {
                 'label': 'Tani',
-                '_id': '589383656bfd421fb0c2b6c2',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c2'
             },
             {
                 'label': 'Ekologiczny',
-                '_id': '589383656bfd421fb0c2b6c1',
-                'subtypes': []
+                '_id': '589383656bfd421fb0c2b6c1'
             }
         ]
     };
 
     Picklist.remove({})
         .then(()=> {
-            Picklist.insertMany([mealTypes, cookingTtimes, mealAttrs, productCategories, productAttrs], function(err, res) {
+            Picklist.insertMany([mealTypes, cookingTtimes, mealAttrs, productCategories, productAttrs, priceTypes], function(err, res) {
                 resolve('success');
             });
         });

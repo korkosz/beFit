@@ -9,32 +9,24 @@
         </div>
 
         <div class="products__fourthtab-box">
-            <!--Zostawiam narazie jedna cene bo tak jak gadalismy to trzeba przemyslec-->
             <div class="l-flex-row small-gutter">
                 <div class="input__container small-gutter">
                     <label class="input__label">
                         Cena (PLN) za
-
-                        <!-- Wpierdolilem tu zwyklego bootstrapowego dropdowna
-                        zdecyduj czy dasz go jako ct-select czy inaczej
-                        ostyluje go jak juz go ojebiesz:D -->
                         <div class="inline-dropdown">
                             <span class="dropdown-toggle" type="button"
-                                    id="dropdownMenu2"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="true">
-                                    szt <span class="caret"></span>
+                                  id="dropdownMenu2" data-toggle="dropdown"
+                                  aria-haspopup="true" aria-expanded="true">
+                                {{$ctrl.selectedPriceType.label}}
+                                <span class="caret"></span>
                             </span>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <li><a href="#">szt</a></li>
-                                <li><a href="#">100g</a></li>
-                                <li><a href="#">100ml</a></li>
+                                <li ng-repeat="priceType in $ctrl.priceTypes">
+                                    <a ng-click="$ctrl.selectPriceType(priceType)">{{priceType.label}}</a>
+                                </li>
                             </ul>
                         </div>
                     </label>
-
-
                     <input required="required" type="number"
                            ng-model="$ctrl.newProduct.price"
                            placeholder="..."
@@ -42,17 +34,16 @@
                 </div>
             </div>
 
-            <!-- Tak sobie mysle ze jak ktos podaje cene sztuki produktu
-            to moze mu wyskoczyc ten input (na frisco zawsze jest podana waga netto) -->
-            <div class="l-flex-row small-gutter">
+            <div ng-show="$ctrl.selectedPriceType.label === 'szt';"
+                 class="l-flex-row small-gutter">
                 <div class="input__container small-gutter">
                     <label class="input__label">
                         Waga (g) netto jednej sztuki
                     </label>
 
                     <input required="required" type="number"
-                            placeholder="..."
-                            class="input__field">
+                           placeholder="..."
+                           class="input__field">
                 </div>
             </div>
         </div>

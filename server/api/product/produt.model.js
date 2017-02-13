@@ -6,11 +6,7 @@ const schema = new mongoose.Schema({
         required: true
     },
     price: Number,
-    priceType: {
-        type: String,
-        default: 'szt'
-    },
-
+    priceType: mongoose.Schema.Types.ObjectId,
     priceUpdateDate: {
         type: Number,
         default() {

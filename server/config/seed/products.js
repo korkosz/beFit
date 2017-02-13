@@ -9,7 +9,7 @@ Product.remove({}).then(()=> {
     let prods = [{
         name: 'Chleb razowy',
         price: 2.02,
-        priceType: 'szt',
+        priceType: '58a1bc03c14e2617787def4e',
         priceUpdateDate: (new Date()).getTime(),
         proteins: 11,
         fats: 3,
@@ -21,7 +21,7 @@ Product.remove({}).then(()=> {
     }, {
         name: 'Jabłko',
         price: 0.60,
-        priceType: 'szt',
+        priceType: '58a1bc03c14e2617787def4e',
         priceUpdateDate: (new Date()).getTime(),
         proteins: 5,
         fats: 0.3,
@@ -33,7 +33,7 @@ Product.remove({}).then(()=> {
     }, {
         name: 'Platki Owsiane',
         price: 4.32,
-        priceType: 'szt',
+        priceType: '58a1bc03c14e2617787def4c',
         priceUpdateDate: (new Date()).getTime(),
         proteins: 5,
         fats: 12,
@@ -45,7 +45,7 @@ Product.remove({}).then(()=> {
     }, {
         name: 'Chleb razowy',
         price: 33,
-        priceType: 'szt',
+        priceType: '58a1bc03c14e2617787def4d',
         priceUpdateDate: (new Date()).getTime(),
         proteins: 5,
         fats: 0.3,
@@ -57,7 +57,7 @@ Product.remove({}).then(()=> {
     }, {
         name: 'Chleb razowy',
         price: 12,
-        priceType: 'szt',
+        priceType: '58a1bc03c14e2617787def4d',
         priceUpdateDate: (new Date()).getTime(),
         proteins: 1,
         fats: 4,
