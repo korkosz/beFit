@@ -9,8 +9,8 @@ module.exports = {
         const vm = this;
 
         vm.$onInit = function() {
-            vm.activeTabIdx = 0;
             vm.newProduct = {};
+            vm.activeTabIdx = 0;
 
             vm.done = vm.done || angular.noop;
 
@@ -21,10 +21,6 @@ module.exports = {
             //set default price type
             vm.selectedPriceType = vm.priceTypes.find((_priceType)=> {
                 return _priceType.label === 'szt';
-            });
-
-            $scope.$watch(()=> vm.file, ()=> {
-                vm.upload(vm.file);
             });
         };
 

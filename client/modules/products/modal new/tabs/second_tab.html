@@ -5,7 +5,7 @@
 <section>
     <!--Image drop zone - visible if no image dropped yet-->
     <div ng-hide="$ctrl.file"
-         ngf-drop ngf-select ng-model="$ctrl.file" class="drop-box"
+         ngf-drop="$ctrl.upload($file)" ngf-select ng-model="$ctrl.file" class="drop-box"
          ngf-drag-over-class="'dragover'" accept="image/*"
          ngf-pattern="'image/*'">
         Dodaj zdjęcie produktu
