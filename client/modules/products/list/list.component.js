@@ -1,4 +1,7 @@
 module.exports = {
+    bindings: {
+        selectable: '<'
+    },
     templateUrl: '/modules/products/list/list.template.html',
     controller(productsFactory, metadataFactory, $timeout) {
         const vm = this;
