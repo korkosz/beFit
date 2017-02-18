@@ -4,7 +4,7 @@ module.exports = {
         const vm = this;
 
         vm.$onInit = function () {
-            vm.activeTabIdx = 1;
+            vm.activeTabIdx = 2;
 
             vm.mealTypes = metadataFactory.get('mealTypes');
             vm.mealAttrs = metadataFactory.get('mealAttrs');
