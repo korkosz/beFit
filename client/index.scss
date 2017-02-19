@@ -4,9 +4,11 @@
 @import "modules/index";
 @import "libs/ct/index";
 
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,900&subset=latin-ext');
 
 body,
 html {
   font-size: 16px;
   color: #333;
+  font-family: 'Nunito Sans', sans-serif;
 }
