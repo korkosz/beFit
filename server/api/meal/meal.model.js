@@ -12,12 +12,9 @@ const schema = new mongoose.Schema({
     time: {
         type: mongoose.Schema.Types.ObjectId,
     },
-    calories: {
-        type: Number,
-        required: true
-    },
+    calories: Number,
     attributes: [mongoose.Schema.Types.ObjectId],
-    products: [{
+    ingredients: [{
         product: { type: mongoose.Schema.Types.ObjectId, ref: 'product' },
         amount: Number,
         proteins: Number,

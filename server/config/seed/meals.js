@@ -2,6 +2,9 @@
 
 const Picklist = require('../../api/metadata/picklist.model.js');
 const Meal = require('../../api/meal/meal.model.js');
+const Product = require('../../api/product/produt.model');
+
+const mealHelpers = require('../../api/meal/meal.helpers.js');
 
 const fakeNames = ['Owsianka', 'Ryż+kurczak', 'Jajo sadzone',
     'Owsianka v2', 'Kurczak po chinsku', 'Shake', 'Omlet', 'Kromka ze smalcem',
@@ -11,34 +14,39 @@ const times = ['588f2cca567a9d102cc610ce', '588f2cca567a9d102cc610cd',
     '588f2cca567a9d102cc610cc', '588f2cca567a9d102cc610cb', '588f2cca567a9d102cc610ca',
     '588f2cca567a9d102cc610c9', '588f2cca567a9d102cc610c8'];
 
-const products = ['58a1bc03c14e2617787def4e', '58a9dbbe4fafc4232451d9fd', '58a9dbbe4fafc4232451d9fe',
-    '58a9dbbe4fafc4232451d9ff', '58a9dbbe4fafc4232451da00'];
 
 Picklist.find({name: 'mealTypes'}).lean()
-    .then((res)=> {
-        Picklist.find({name: 'mealAttrs'}).lean().then((res2)=> {
-            const fakeMealsArr = [];
-            const types = res[0].values;
-            const mealAttrs = res2[0].values;
+    .then((mealTypes)=> {
+        Picklist.find({name: 'mealAttrs'})
+            .then((_mealAttrs)=> {
+                Product.find({}).lean()
+                    .then((products)=> {
+                        const fakeMealsArr = [];
+                        const types = mealTypes[0].values;
+                        const mealAttrs = _mealAttrs[0].values;
 
-            for(let item of fakeNames) {
-                let fakeMeal = {
-                    name: item,
-                    time: times[Math.floor(Math.random() * times.length)],
-                    calories: Math.floor(Math.random() * 450 + 300),
-                    type: types[Math.floor(Math.random() * types.length)]._id,
-                    attributes: generateAttributes(mealAttrs),
-                    products: generateProducts(products)
-                }
+                        for(let item of fakeNames) {
+                            let ingredients = generateProducts(products);
+                            let calories = calculateCalories(ingredients);
 
-                fakeMealsArr.push(fakeMeal);
-            }
+                            let fakeMeal = {
+                                name: item,
+                                time: times[Math.floor(Math.random() * times.length)],
+                                type: types[Math.floor(Math.random() * types.length)]._id,
+                                attributes: generateAttributes(mealAttrs),
+                                ingredients: ingredients,
+                                calories: calories
+                            };
 
-            Meal.remove({}).then(()=> {
-                Meal.insertMany(fakeMealsArr, function(err, res) {
-                });
+                            fakeMealsArr.push(fakeMeal);
+                        }
+
+                        Meal.remove({}).then(()=> {
+                            Meal.insertMany(fakeMealsArr, function(err, res) {
+                            });
+                        });
+                    })
             });
-        });
     })
     .catch((err)=> {
         debugger
@@ -68,8 +76,21 @@ function generateProducts(_products) {
     const prods = [];
 
     while(counter--) {
-        prods.push(_products[Math.floor(Math.random() * _products.length)])
+        let amount = Math.floor(Math.random() * 200 + 30);
+        let product = _products[Math.floor(Math.random() * _products.length)];
+        let nutritionValues = mealHelpers.calculateNutritionValues(product, amount);
+
+        nutritionValues.product = product._id;
+        nutritionValues.amount = amount;
+
+        prods.push(nutritionValues);
     }
 
     return prods;
+}
+
+function calculateCalories(ingredients) {
+    return ingredients.reduce((value, prod)=> {
+        return prod.calories + value;
+    }, 0);
 }

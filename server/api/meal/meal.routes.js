@@ -42,7 +42,8 @@ router.get('/', function(req, res) {
         delete filters.caloriesTo;
     }
 
-    Meal.find(filters).lean()
+    //TODO: exclude nie jest generyczne
+    Meal.find(filters).select({'ingredients': 0}).lean()
         .then(result => {
             res.json(result);
         })
@@ -53,15 +54,20 @@ router.get('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
     const id = req.params.id;
-    const includedProdFields = 'name netWeight proteins fats carbs calories';
 
-    Meal.findById(id).populate('products', includedProdFields)
+    Meal.findById(id).populate('ingredients.product', 'name').lean()
         .then((result)=> {
             res.send(result);
         })
         .catch((err)=> {
             res.status(500).send(err);
         });
+});
+
+router.post('/', function() {
+  //TODO: narazie dac tutaj update calories jako sume calories produktow powiazanych z tym posilkiem
+    //przechowujemy w bazie osobno sume calories bo nie chcemy tego obliczac za kazdym razem - czesciej
+    //bedzie czytane niz zapisywane - wydajnosc
 });
 
 module.exports = router;
