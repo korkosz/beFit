@@ -11,6 +11,9 @@ const times = ['588f2cca567a9d102cc610ce', '588f2cca567a9d102cc610cd',
     '588f2cca567a9d102cc610cc', '588f2cca567a9d102cc610cb', '588f2cca567a9d102cc610ca',
     '588f2cca567a9d102cc610c9', '588f2cca567a9d102cc610c8'];
 
+const products = ['58a1bc03c14e2617787def4e', '58a9dbbe4fafc4232451d9fd', '58a9dbbe4fafc4232451d9fe',
+    '58a9dbbe4fafc4232451d9ff', '58a9dbbe4fafc4232451da00'];
+
 Picklist.find({name: 'mealTypes'}).lean()
     .then((res)=> {
         Picklist.find({name: 'mealAttrs'}).lean().then((res2)=> {
@@ -24,7 +27,8 @@ Picklist.find({name: 'mealTypes'}).lean()
                     time: times[Math.floor(Math.random() * times.length)],
                     calories: Math.floor(Math.random() * 450 + 300),
                     type: types[Math.floor(Math.random() * types.length)]._id,
-                    attributes: generateAttributes(mealAttrs)
+                    attributes: generateAttributes(mealAttrs),
+                    products: generateProducts(products)
                 }
 
                 fakeMealsArr.push(fakeMeal);
@@ -57,4 +61,15 @@ function generateAttributes(_mealAttrs) {
     if(third) ret.push(third);
 
     return ret;
+}
+
+function generateProducts(_products) {
+    let counter = Math.floor(Math.random() * _products.length) || 1;
+    const prods = [];
+
+    while(counter--) {
+        prods.push(_products[Math.floor(Math.random() * _products.length)])
+    }
+
+    return prods;
 }

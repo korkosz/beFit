@@ -16,7 +16,18 @@ const schema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    attributes: [mongoose.Schema.Types.ObjectId]
+    attributes: [mongoose.Schema.Types.ObjectId],
+    products: [{
+        product: { type: mongoose.Schema.Types.ObjectId, ref: 'product' },
+        amount: Number,
+        proteins: Number,
+        fats: Number,
+        carbs: Number,
+        calories: {
+            type: Number,
+            required: true
+        }
+    }]
 });
 
 module.exports = mongoose.model('meal', schema);

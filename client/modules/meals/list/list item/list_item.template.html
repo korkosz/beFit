@@ -42,10 +42,15 @@
     <div class="meals__meal-buttons">
         <button class="ct-btn__trash glyphicon glyphicon-trash"
                 ng-click="$ctrl.showDeleteModal()"></button>
-        <button ng-click="$ctrl.showDetails()"
+        <button ng-click="$ctrl.showIngredients()"
                 class="ct-btn ct-btn__secondary smaller">Szczegoly
         </button>
 
+    </div>
+
+    <!--Ingredients-->
+    <div ng-show="$ctrl.ingredientsVisible">
+        <meal-ingredients meal="$ctrl.item"></meal-ingredients>
     </div>
 </div>
 

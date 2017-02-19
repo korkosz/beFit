@@ -11,6 +11,10 @@ module.exports = {
             $('#deleteMealModal').modal('show');
         };
 
+        vm.showIngredients = function() {
+            vm.ingredientsVisible = !vm.ingredientsVisible
+        };
+
         vm.done = function(result) {
             if(result === 'deleted') {
                 $('#deleteMealModal')

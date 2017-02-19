@@ -51,4 +51,17 @@ router.get('/', function(req, res) {
         });
 });
 
+router.get('/:id', function(req, res) {
+    const id = req.params.id;
+    const includedProdFields = 'name netWeight proteins fats carbs calories';
+
+    Meal.findById(id).populate('products', includedProdFields)
+        .then((result)=> {
+            res.send(result);
+        })
+        .catch((err)=> {
+            res.status(500).send(err);
+        });
+});
+
 module.exports = router;
