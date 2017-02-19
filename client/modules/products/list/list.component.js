@@ -1,6 +1,7 @@
 module.exports = {
     bindings: {
-        selectable: '<'
+        selectable: '<',
+        getSelected: '&'
     },
     templateUrl: '/modules/products/list/list.template.html',
     controller(productsFactory, metadataFactory, $timeout) {
@@ -21,6 +22,10 @@ module.exports = {
             vm.clearModal = true;
         };
 
+        vm.selectProduct = function(product) {
+            product.selected = !product.selected;
+        };
+
         vm.categoryChanged = function() {
             vm.filters.subcategory = null;
             vm.filterChanged();
@@ -31,6 +36,16 @@ module.exports = {
                 vm.filters.ownOrAll = val;
                 vm.filterChanged();
             }
+        };
+
+        vm.returnSelected = function() {
+            const selectedProducts = vm.products
+                .filter((p)=>p.selected);
+
+            $('#productListModal').modal('hide')
+                .on('hidden.bs.modal', function() {
+                    vm.getSelected({selectedProducts});
+                });
         };
 
         vm.filterChanged = function() {

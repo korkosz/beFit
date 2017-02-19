@@ -1,11 +1,18 @@
 .selectable {
-    .products__list-row{
-        cursor: pointer;
+  .products__list-row {
+    cursor: pointer;
 
-        &:hover {
-            background: #fff6f6;
-        }
+    &:hover {
+      background: #fff6f6;
     }
+
+  }
+
+  &.selected {
+    .products__list-row {
+      background: antiquewhite;
+    }
+  }
 }
 
 .products__list-row{

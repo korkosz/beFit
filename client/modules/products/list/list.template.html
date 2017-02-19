@@ -20,8 +20,10 @@
         <!--List-->
         <div ng-repeat="product in $ctrl.products"
              class="products__list">
-            <product-list-item item="product"
-                               class="{{$ctrl.selectable ? 'selectable': ''}}"></product-list-item>
+            <product-list-item item="product" ng-click="$ctrl.selectProduct(product)"
+                               ng-class="{'selectable': $ctrl.selectable,
+                                          'selected': product.selected}">
+            </product-list-item>
         </div>
 
         <!-- Pagination -->
@@ -57,6 +59,10 @@
                 </li>
             </ul>
         </nav>
+
+        <div ng-if="$ctrl.selectable">
+            <button ng-click="$ctrl.returnSelected()">Dodaj</button>
+        </div>
     </div>
 </section>
 

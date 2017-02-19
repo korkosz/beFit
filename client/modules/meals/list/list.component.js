@@ -15,6 +15,10 @@ module.exports = {
             vm.getMeals();
         };
 
+        vm.getSelected = function(selectedProducts) {
+            debugger;
+        };
+
         vm.timeChanged = function(activePills) {
             vm.filters.time = activePills;
             vm.filterChanged();
@@ -48,9 +52,7 @@ module.exports = {
             vm.filterChanged();
         };
 
-        vm.showDetails = function() {
-            $('#detailsModal').modal('show');
-        };
+
 
         vm.closeDetails = function() {
             $('#detailsModal').modal('hide');
