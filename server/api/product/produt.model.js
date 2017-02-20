@@ -1,18 +1,21 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
-//TODO: do zmiany required
-
-const schema = new mongoose.Schema({
+const schema = new Schema({
     name: {
         type: String,
         required: true
     },
-    category: mongoose.Schema.Types.ObjectId,
-    subcategory: mongoose.Schema.Types.ObjectId,
-    attributes: [mongoose.Schema.Types.ObjectId],
+    category: {
+        type: ObjectId,
+        required: true
+    },
+    subcategory: ObjectId,
+    attributes: [ObjectId],
 
     price: Number,
-    priceType: mongoose.Schema.Types.ObjectId,
+    priceType: ObjectId,
     priceUpdateDate: {
         type: Number,
         default() {
@@ -23,9 +26,18 @@ const schema = new mongoose.Schema({
     },
 
     /** Per 100g/100ml **/
-    proteins: Number,
-    fats: Number,
-    carbs: Number,
+    proteins: {
+        type: Number,
+        required: true
+    },
+    fats: {
+        type: Number,
+        required: true
+    },
+    carbs: {
+        type: Number,
+        required: true
+    },
     calories: {
         type: Number,
         required: true
@@ -34,7 +46,7 @@ const schema = new mongoose.Schema({
 
     netWeight: Number,
     image: Buffer,
-    owner: mongoose.Schema.Types.ObjectId,
+    owner: ObjectId,
     private: {
         type: Boolean,
         default: false
