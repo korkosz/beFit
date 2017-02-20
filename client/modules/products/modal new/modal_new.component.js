@@ -26,6 +26,7 @@ module.exports = {
 
         vm.selectPriceType = function(priceType) {
             vm.newProduct.priceType = priceType;
+            vm.newProduct.netWeight = null;
         };
 
         vm.categoryChanged = function() {
