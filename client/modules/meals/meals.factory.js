@@ -9,6 +9,10 @@ module.exports = function($http, metadataFactory) {
         });
     };
 
+    const getMeal = function(id) {
+        return $http.get(`/api/meals/${id}`);
+    };
+
     const deleteMeal = function(id) {
         return $http.delete(`/api/meals/${id}`)
             .catch((err)=> {
@@ -18,7 +22,8 @@ module.exports = function($http, metadataFactory) {
 
     return {
         deleteMeal,
-        getMeals
+        getMeals,
+        getMeal
     };
 
     ///

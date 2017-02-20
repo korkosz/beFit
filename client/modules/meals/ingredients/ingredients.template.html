@@ -13,7 +13,7 @@
         <tbody>
 
         <!--This row is visible only if there is no products added yet-->
-        <tr>
+        <tr ng-if="$ctrl.meal.ingredients.length === 0">
             <td>Produkt...</td>
             <td>0 g</td>
             <td>0 kcal</td>
@@ -22,22 +22,13 @@
             <td>0 g</td>
         </tr>
 
-
-        <tr>
-            <td>Ryz biały</td>
-            <td>200 g</td>
-            <td>679 kcal</td>
-            <td>13.4 g</td>
-            <td>153.3 g</td>
-            <td>1.4 g</td>
-        </tr>
-        <tr>
-            <td>Ryz biały</td>
-            <td>200 g</td>
-            <td>679 kcal</td>
-            <td>13.4 g</td>
-            <td>153.3 g</td>
-            <td>1.4 g</td>
+        <tr ng-repeat="ingredient in $ctrl.meal.ingredients">
+            <td>{{ingredient.product.name}}</td>
+            <td>{{ingredient.amount}} g</td>
+            <td>{{ingredient.calories}} kcal</td>
+            <td>{{ingredient.proteins}} g</td>
+            <td>{{ingredient.carbs}} g</td>
+            <td>{{ingredient.fats}} g</td>
         </tr>
         </tbody>
     </table>
