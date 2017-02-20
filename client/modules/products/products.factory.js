@@ -15,7 +15,7 @@ module.exports = function($http, metadataFactory, Upload) {
     const saveNewProduct = function(newProduct) {
         return Upload.upload({
             url: '/api/products',
-            data: newProduct
+            data: removeNullPropierties(newProduct)
         });
     };
 
@@ -25,6 +25,15 @@ module.exports = function($http, metadataFactory, Upload) {
     };
 
     ///
+    function removeNullPropierties(product) {
+        for(let prop in product) {
+            if(product[prop] === null) {
+                delete product[prop];
+            }
+        }
+        return product;
+    }
+
     function populateAttrs(products) {
         const meta = metadataFactory.get('productAttrs');
 

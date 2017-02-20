@@ -34,13 +34,23 @@
                    placeholder="..."
                    class="input__field small">
         </div>
+        <div class="input__container">
+            <label class="input__label">
+                Kalorie (kcal/100g)
+                <span class="input__required">*</span>
+            </label>
+            <input required="required" type="number"
+                   ng-model="$ctrl.newProduct.calories"
+                   placeholder="..."
+                   class="input__field small">
+        </div>
     </div>
 
     <div class="l-flex-row">
         <ct-checkbox label="{{attr.label}}"
                      on-change="$ctrl.attrToggled(val, label)"
                      group="newProduct"
-                      ng-repeat="attr in $ctrl.productAttrs"
+                     ng-repeat="attr in $ctrl.productAttrs"
                      class="ct-checkbox__container">
         </ct-checkbox>
     </div>
