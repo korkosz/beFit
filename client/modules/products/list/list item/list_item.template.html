@@ -1,7 +1,8 @@
 <div class="l-flex-row products__list-row">
     <!-- Image -->
     <div class="products__img-wrapper">
-        <img src="{{$ctrl.item.image}}" alt="Bez zdjecia"
+        <!--TODO: jesli w trybie modala to w ogole nie strzelac po obrazki bo szkoda bandwidth'a-->
+        <img ng-src="{{$ctrl.item.image}}" alt="Bez zdjecia"
              class="products__img" />
     </div>
 

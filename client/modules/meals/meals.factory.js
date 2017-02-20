@@ -73,7 +73,7 @@ module.exports = function($http, metadataFactory) {
             if(prod.image) {
                 prod.image = URL.createObjectURL(b64toBlob(prod.image, 'image/jpeg'));
             } else {
-                prod.image = 'assets/images/noImage.jpg';
+                prod.image = 'assets/images/noImage.png';
             }
             return prod;
         });
